@@ -14,14 +14,11 @@ const navigation = [
 <header class="cb-navbar" data-navbar>
   <div class="cb-container cb-navbar__inner">
     <a class="cb-brand" href="/" aria-label="CtrlBuild Technologies home">
-      <span class="cb-brand__mark" aria-hidden="true">
-        <span></span>
-        <span></span>
-      </span>
-
-      <span class="cb-brand__name">
-        Ctrl<span>Build</span>
-      </span>
+      <img
+        class="cb-brand__logo"
+        src="/ctrlbuild-logo.png"
+        alt="CtrlBuild Technologies"
+      />
     </a>
 
     <nav class="cb-navbar__desktop" aria-label="Primary navigation">
@@ -170,38 +167,12 @@ const navigation = [
     flex-shrink: 0;
   }
 
-  .cb-brand__mark {
-    display: grid;
-    width: 2rem;
-    height: 2rem;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.15rem;
-    overflow: hidden;
-    border-radius: 0.45rem;
-    background: var(--color-brand-burgundy);
-    padding: 0.3rem;
-  }
-
-  .cb-brand__mark span {
+  .cb-brand__logo {
     display: block;
-    border-radius: 0.15rem;
-    background: var(--color-brand-coral);
-  }
-
-  .cb-brand__mark span:last-child {
-    margin-top: 0.45rem;
-    background: #fff;
-  }
-
-  .cb-brand__name {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-  }
-
-  .cb-brand__name span {
-    color: var(--color-brand-coral);
+    width: 9.5rem;
+    height: auto;
+    max-height: 3rem;
+    object-fit: contain;
   }
 
   .cb-navbar__desktop {
