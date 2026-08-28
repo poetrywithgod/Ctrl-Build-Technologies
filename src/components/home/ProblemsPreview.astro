@@ -1,0 +1,247 @@
+<section class="cb-problems" id="solutions">
+  <div class="cb-container">
+    <div class="cb-problems__intro">
+      <p class="cb-eyebrow">/ THE PROBLEM WE SOLVE</p>
+      <h2>Your business has a process. <span>We build the system behind it.</span></h2>
+      <p>Good software should remove friction, connect information and give people better ways to work. We turn complex operations and ideas into practical digital systems.</p>
+    </div>
+
+    <div class="cb-problems__list">
+      <article class="cb-problem">
+        <span class="cb-problem__index">01</span>
+        <div class="cb-problem__flow">
+          <div>
+            <strong>Manual processes</strong>
+            <span>Repetitive work, paperwork and disconnected tasks.</span>
+          </div>
+          <span class="cb-problem__arrow" aria-hidden="true">→</span>
+          <div class="cb-problem__solution">
+            <strong>Digital workflows</strong>
+            <span>Structured systems that automate the work.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cb-problem">
+        <span class="cb-problem__index">02</span>
+        <div class="cb-problem__flow">
+          <div>
+            <strong>Scattered information</strong>
+            <span>Data living across spreadsheets, devices and departments.</span>
+          </div>
+          <span class="cb-problem__arrow" aria-hidden="true">→</span>
+          <div class="cb-problem__solution">
+            <strong>One connected platform</strong>
+            <span>Centralised data with the right access for every team.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cb-problem">
+        <span class="cb-problem__index">03</span>
+        <div class="cb-problem__flow">
+          <div>
+            <strong>Disconnected systems</strong>
+            <span>Tools that cannot communicate or share information.</span>
+          </div>
+          <span class="cb-problem__arrow" aria-hidden="true">→</span>
+          <div class="cb-problem__solution">
+            <strong>Integrated architecture</strong>
+            <span>APIs and services designed to work together.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cb-problem">
+        <span class="cb-problem__index">04</span>
+        <div class="cb-problem__flow">
+          <div>
+            <strong>Raw business data</strong>
+            <span>Numbers without the visibility needed to act on them.</span>
+          </div>
+          <span class="cb-problem__arrow" aria-hidden="true">→</span>
+          <div class="cb-problem__solution">
+            <strong>Actionable intelligence</strong>
+            <span>Analytics and dashboards that make information useful.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="cb-problem">
+        <span class="cb-problem__index">05</span>
+        <div class="cb-problem__flow">
+          <div>
+            <strong>An idea on paper</strong>
+            <span>A product concept without the technical path forward.</span>
+          </div>
+          <span class="cb-problem__arrow" aria-hidden="true">→</span>
+          <div class="cb-problem__solution">
+            <strong>A working product</strong>
+            <span>From requirements and architecture to launch and growth.</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="cb-problems__footer">
+      <p>Software should make complexity <strong>simpler.</strong></p>
+      <a href="/contact/">Tell us what you are trying to solve <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cb-problems {
+    padding: 8rem 0;
+    background: var(--color-bg);
+  }
+
+  .cb-problems__intro {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 58rem;
+    margin-bottom: 4rem;
+  }
+
+  .cb-problems__intro h2 {
+    max-width: 13ch;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-problems__intro h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-problems__intro > p:last-child {
+    max-width: 40rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cb-problems__list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-problem {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-problem__index {
+    padding-top: 0.2rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .cb-problem__flow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .cb-problem__flow > div {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .cb-problem__flow strong {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+  }
+
+  .cb-problem__flow span:not(.cb-problem__arrow) {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .cb-problem__arrow {
+    color: var(--color-brand-coral);
+    font-size: 1.3rem;
+  }
+
+  .cb-problem__solution {
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-problem__solution strong {
+    color: var(--color-brand-burgundy);
+  }
+
+  html[data-theme="dark"] .cb-problem__solution strong {
+    color: var(--color-brand-coral-light);
+  }
+
+  .cb-problems__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cb-problems__footer p {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+  }
+
+  .cb-problems__footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-brand-coral);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .cb-problems__footer a span {
+    transition: transform 180ms ease;
+  }
+
+  .cb-problems__footer a:hover span {
+    transform: translate(3px, -3px);
+  }
+
+  @media (max-width: 700px) {
+    .cb-problems {
+      padding: 6rem 0;
+    }
+
+    .cb-problem {
+      grid-template-columns: 2rem 1fr;
+    }
+
+    .cb-problem__flow {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .cb-problem__arrow {
+      transform: rotate(90deg);
+      justify-self: start;
+    }
+
+    .cb-problems__footer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-problems__footer a span {
+      transition: none;
+    }
+  }
+</style>
