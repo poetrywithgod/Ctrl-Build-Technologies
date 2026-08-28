@@ -1,0 +1,351 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Services | CtrlBuild Technologies"
+  description="Explore the software engineering and digital solution services offered by CtrlBuild Technologies."
+>
+ <main>
+    <section class="cb-page-hero">
+      <div class="cb-container">
+        <p class="cb-eyebrow">/ SERVICES</p>
+
+        <h1>
+          We build the <span>technology</span> your business needs.
+        </h1>
+
+        <p class="cb-page-hero__intro">
+          From custom business systems to web applications, mobile products
+          and intelligent digital solutions, we design and engineer software
+          around the way your organisation actually works.
+        </p>
+      </div>
+    </section>
+
+    <section class="cb-services-list">
+      <div class="cb-container">
+        <div class="cb-service">
+          <span class="cb-service__number">01</span>
+
+          <div class="cb-service__content">
+            <p class="cb-eyebrow">SOFTWARE ENGINEERING</p>
+            <h2>Custom software systems</h2>
+            <p>
+              Purpose-built software for organisations whose processes cannot
+              be adequately served by off-the-shelf tools.
+            </p>
+
+            <ul>
+              <li>Business management systems</li>
+              <li>Operational platforms</li>
+              <li>Workflow automation</li>
+              <li>Internal tools and portals</li>
+              <li>Database-driven applications</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cb-service">
+          <span class="cb-service__number">02</span>
+
+          <div class="cb-service__content">
+            <p class="cb-eyebrow">WEB DEVELOPMENT</p>
+            <h2>Web applications & platforms</h2>
+            <p>
+              Fast, responsive and maintainable web applications designed for
+              customers, teams and complex operational use cases.
+            </p>
+
+            <ul>
+              <li>Web applications</li>
+              <li>Customer portals</li>
+              <li>Dashboards</li>
+              <li>Multi-tenant platforms</li>
+              <li>Progressive web applications</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cb-service">
+          <span class="cb-service__number">03</span>
+
+          <div class="cb-service__content">
+            <p class="cb-eyebrow">MOBILE DEVELOPMENT</p>
+            <h2>Mobile products</h2>
+            <p>
+              Mobile experiences that put useful products, services and
+              business capabilities directly in the hands of users.
+            </p>
+
+            <ul>
+              <li>Android applications</li>
+              <li>Cross-platform applications</li>
+              <li>Mobile-first product experiences</li>
+              <li>API-connected applications</li>
+              <li>Offline-capable workflows</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cb-service">
+          <span class="cb-service__number">04</span>
+
+          <div class="cb-service__content">
+            <p class="cb-eyebrow">AI & INTELLIGENCE</p>
+            <h2>AI-powered solutions</h2>
+            <p>
+              Practical applications of artificial intelligence that improve
+              workflows, surface information and extend what software can do.
+            </p>
+
+            <ul>
+              <li>AI-assisted workflows</li>
+              <li>Intelligent search</li>
+              <li>Content and document processing</li>
+              <li>AI integrations</li>
+              <li>Data-driven automation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cb-service">
+          <span class="cb-service__number">05</span>
+
+          <div class="cb-service__content">
+            <p class="cb-eyebrow">DATA & ANALYTICS</p>
+            <h2>Analytics & business intelligence</h2>
+            <p>
+              Turn operational data into useful information through reporting,
+              dashboards and systems that make important signals easier to see.
+            </p>
+
+            <ul>
+              <li>Business dashboards</li>
+              <li>Reporting systems</li>
+              <li>Data visualisation</li>
+              <li>Performance tracking</li>
+              <li>Analytics integrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cb-service">
+          <span class="cb-service__number">06</span>
+
+          <div class="cb-service__content">
+            <p class="cb-eyebrow">INTEGRATION & AUTOMATION</p>
+            <h2>Connected digital systems</h2>
+            <p>
+              Connect the tools your organisation already uses and automate
+              the movement of information between them.
+            </p>
+
+            <ul>
+              <li>API development</li>
+              <li>Third-party integrations</li>
+              <li>Payment integrations</li>
+              <li>System synchronisation</li>
+              <li>Workflow automation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-services-cta">
+      <div class="cb-container">
+        <div class="cb-services-cta__panel">
+          <p class="cb-eyebrow">/ HAVE A PROJECT?</p>
+          <h2>Let's build something that <span>works.</span></h2>
+          <p>
+            Tell us what you need, what is currently getting in the way, or
+            what you want to build from scratch.
+          </p>
+
+          <a href="/contact/">
+            Start a conversation
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .cb-page-hero {
+    padding: 9rem 0 7rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-page-hero h1 {
+    max-width: 11ch;
+    margin-top: 1.25rem;
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+  }
+
+  .cb-page-hero h1 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-page-hero__intro {
+    max-width: 42rem;
+    margin-top: 2rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .cb-services-list {
+    padding: 2rem 0 0;
+  }
+
+  .cb-service {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-service__number {
+    padding-top: 0.25rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .cb-service__content {
+    max-width: 52rem;
+  }
+
+  .cb-service__content h2 {
+    max-width: 16ch;
+    margin-top: 0.75rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .cb-service__content > p:not(.cb-eyebrow) {
+    max-width: 38rem;
+    margin-top: 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .cb-service__content ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 2rem;
+    margin: 2rem 0 0;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--color-border);
+    list-style: none;
+  }
+
+  .cb-service__content li {
+    position: relative;
+    padding-left: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .cb-service__content li::before {
+    position: absolute;
+    top: 0.55em;
+    left: 0;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background: var(--color-brand-coral);
+    content: '';
+  }
+
+  .cb-services-cta {
+    padding: 8rem 0;
+  }
+
+  .cb-services-cta__panel {
+    padding: 4rem 2rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-services-cta__panel h2 {
+    max-width: 13ch;
+    margin-top: 1rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.97;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-services-cta__panel h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-services-cta__panel > p:not(.cb-eyebrow) {
+    max-width: 34rem;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .cb-services-cta__panel a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .cb-services-cta__panel a span {
+    transition: transform 180ms ease;
+  }
+
+  .cb-services-cta__panel a:hover span {
+    transform: translate(3px, -3px);
+  }
+
+  @media (min-width: 700px) {
+    .cb-page-hero {
+      padding: 11rem 0 8rem;
+    }
+
+    .cb-service {
+      grid-template-columns: 5rem minmax(0, 1fr);
+      gap: 2rem;
+      padding: 6rem 0;
+    }
+
+    .cb-services-cta__panel {
+      padding: 6rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cb-page-hero {
+      padding: 7rem 0 5rem;
+    }
+
+    .cb-service__content ul {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-services-cta {
+      padding: 6rem 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-services-cta__panel a span {
+      transition: none;
+    }
+  }
+</style>
