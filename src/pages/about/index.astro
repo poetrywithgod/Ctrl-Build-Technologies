@@ -1,0 +1,579 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/ui/Button.astro';
+
+const principles = [
+  {
+    number: '01',
+    title: 'Understand first.',
+    text: 'Every strong product starts with understanding the problem. We take time to understand your organisation, your users and what success actually looks like before we start building.',
+  },
+  {
+    number: '02',
+    title: 'Build with purpose.',
+    text: 'Technology should have a job to do. We design systems around real business needs, combining thoughtful product thinking with solid engineering.',
+  },
+  {
+    number: '03',
+    title: 'Keep it useful.',
+    text: 'Complexity is easy to create. Our goal is to build software that feels clear, performs reliably and makes everyday work easier.',
+  },
+  {
+    number: '04',
+    title: 'Think beyond launch.',
+    text: 'A product is not finished when it goes live. We build with maintainability, scalability and the next stage of growth in mind.',
+  },
+];
+
+const capabilities = [
+  'Web applications',
+  'Mobile applications',
+  'Business systems',
+  'AI & automation',
+  'Digital products',
+  'Data & analytics',
+];
+---
+
+<Layout
+  title="About | CtrlBuild Technologies"
+  description="CtrlBuild Technologies is a software engineering and digital solutions company building useful, reliable technology for ambitious organisations."
+>
+  <main class="cb-about">
+    <section class="cb-about__hero">
+      <div class="cb-container">
+        <div class="cb-eyebrow">
+          <span class="cb-eyebrow__dot"></span>
+          CtrlBuild / About
+        </div>
+
+        <div class="cb-about__hero-grid">
+          <h1>
+            Technology should
+            <span>move you forward.</span>
+          </h1>
+
+          <div class="cb-about__hero-copy">
+            <p>
+              CtrlBuild Technologies is a software engineering and digital
+              solutions company building technology for organisations that
+              want to do more.
+            </p>
+
+            <p>
+              We turn ideas, operational challenges and opportunities into
+              digital products and systems that people can actually use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-about__statement">
+      <div class="cb-container">
+        <div class="cb-statement">
+          <div class="cb-statement__label">
+            <span>Our approach</span>
+          </div>
+
+          <div>
+            <p class="cb-statement__large">
+              If you can think it,
+              <span>we can build it.</span>
+            </p>
+
+            <p class="cb-statement__body">
+              From a new digital product to an internal business system, we
+              believe technology should remove friction, create opportunity
+              and give people better ways to work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-about__principles">
+      <div class="cb-container">
+        <div class="cb-section-heading">
+          <div>
+            <div class="cb-eyebrow">
+              <span class="cb-eyebrow__dot"></span>
+              What we believe
+            </div>
+
+            <h2>Good technology<br />starts with <span>good thinking.</span></h2>
+          </div>
+
+          <p>
+            We combine engineering discipline with practical thinking to
+            create products that solve real problems.
+          </p>
+        </div>
+
+        <div class="cb-principles-grid">
+          {principles.map((principle) => (
+            <article class="cb-principle">
+              <div class="cb-principle__number">{principle.number}</div>
+
+              <div class="cb-principle__content">
+                <h3>{principle.title}</h3>
+                <p>{principle.text}</p>
+              </div>
+
+              <span class="cb-principle__line"></span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-about__capabilities">
+      <div class="cb-container">
+        <div class="cb-capabilities">
+          <div class="cb-capabilities__intro">
+            <div class="cb-eyebrow">
+              <span class="cb-eyebrow__dot"></span>
+              What we build
+            </div>
+
+            <h2>
+              From idea<br />
+              to <span>working product.</span>
+            </h2>
+
+            <p>
+              We work across the product lifecycle, from early concepts and
+              architecture through development, deployment and ongoing
+              improvement.
+            </p>
+          </div>
+
+          <div class="cb-capabilities__list">
+            {capabilities.map((capability, index) => (
+              <div class="cb-capability">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong>{capability}</strong>
+                <span class="cb-capability__arrow">↗</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-about__numbers">
+      <div class="cb-container">
+        <div class="cb-numbers">
+          <div>
+            <strong>01</strong>
+            <span>Mission</span>
+            <p>Build technology that creates meaningful progress.</p>
+          </div>
+
+          <div>
+            <strong>02</strong>
+            <span>Perspective</span>
+            <p>Engineering is a means to solve real problems.</p>
+          </div>
+
+          <div>
+            <strong>03</strong>
+            <span>Reach</span>
+            <p>Based in Nigeria. Building for organisations anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-about__cta">
+      <div class="cb-container">
+        <div class="cb-cta">
+          <div>
+            <div class="cb-eyebrow">
+              <span class="cb-eyebrow__dot"></span>
+              Start something
+            </div>
+
+            <h2>
+              Have an idea?<br />
+              <span>Let's build it.</span>
+            </h2>
+          </div>
+
+          <div class="cb-cta__action">
+            <p>
+              Tell us what you are trying to build, improve or solve. We will
+              help turn the idea into a practical digital solution.
+            </p>
+
+            <Button
+              href="/contact/"
+              label="Start a conversation"
+              size="lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .cb-about {
+    overflow: hidden;
+  }
+
+  .cb-about__hero {
+    padding: 7rem 0 8rem;
+  }
+
+  .cb-about__hero-grid {
+    display: grid;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .cb-about__hero h1 {
+    max-width: 950px;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 600;
+    line-height: 0.93;
+    letter-spacing: -0.07em;
+  }
+
+  .cb-about__hero h1 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-about__hero-copy {
+    max-width: 500px;
+  }
+
+  .cb-about__hero-copy p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .cb-about__hero-copy p + p {
+    margin-top: 1.25rem;
+  }
+
+  .cb-about__statement {
+    padding: 0 0 8rem;
+  }
+
+  .cb-statement {
+    display: grid;
+    gap: 2rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-statement__label {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .cb-statement__large {
+    max-width: 900px;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.7rem, 6vw, 5.8rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.065em;
+  }
+
+  .cb-statement__large span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-statement__body {
+    max-width: 650px;
+    margin: 2rem 0 0;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .cb-about__principles {
+    padding: 7rem 0 8rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-section-heading {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .cb-section-heading h2 {
+    margin: 1.25rem 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-section-heading h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-section-heading > p {
+    max-width: 430px;
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+
+  .cb-principles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .cb-principle {
+    position: relative;
+    min-height: 330px;
+    padding: 1.5rem;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-principle__number {
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+  }
+
+  .cb-principle__content {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 2rem;
+    left: 1.5rem;
+  }
+
+  .cb-principle h3 {
+    margin: 0 0 1rem;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .cb-principle p {
+    max-width: 430px;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .cb-principle__line {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 2rem;
+    height: 1px;
+    background: var(--color-brand-coral);
+    opacity: 0.6;
+  }
+
+  .cb-about__capabilities {
+    padding: 7rem 0 8rem;
+    background: var(--color-surface);
+  }
+
+  .cb-capabilities {
+    display: grid;
+    gap: 4rem;
+  }
+
+  .cb-capabilities__intro h2 {
+    margin: 1.25rem 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 5.8rem);
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+  }
+
+  .cb-capabilities__intro h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-capabilities__intro p {
+    max-width: 480px;
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+
+  .cb-capabilities__list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-capability {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    min-height: 5.2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-capability > span:first-child {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+  }
+
+  .cb-capability strong {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .cb-capability__arrow {
+    color: var(--color-brand-coral);
+    transition: transform 180ms ease;
+  }
+
+  .cb-capability:hover .cb-capability__arrow {
+    transform: translate(3px, -3px);
+  }
+
+  .cb-about__numbers {
+    padding: 0 0 8rem;
+    background: var(--color-surface);
+  }
+
+  .cb-numbers {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .cb-numbers > div {
+    min-height: 260px;
+    padding: 1.5rem;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-numbers strong {
+    display: block;
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+  }
+
+  .cb-numbers span {
+    display: block;
+    margin-top: 5rem;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+
+  .cb-numbers p {
+    max-width: 300px;
+    margin: 0.7rem 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .cb-about__cta {
+    padding: 0 0 8rem;
+    background: var(--color-surface);
+  }
+
+  .cb-cta {
+    display: grid;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-cta h2 {
+    margin: 1.25rem 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-cta h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-cta__action {
+    max-width: 420px;
+  }
+
+  .cb-cta__action p {
+    margin: 0 0 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  @media (min-width: 768px) {
+    .cb-about__hero-grid {
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      align-items: end;
+    }
+
+    .cb-statement {
+      grid-template-columns: 0.25fr 1fr;
+    }
+
+    .cb-section-heading {
+      grid-template-columns: 1fr 0.65fr;
+      align-items: end;
+    }
+
+    .cb-principles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cb-capabilities {
+      grid-template-columns: 0.8fr 1.2fr;
+      align-items: start;
+    }
+
+    .cb-numbers {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cb-cta {
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: end;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .cb-principles-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-about a,
+    .cb-about span {
+      transition: none;
+    }
+  }
+</style>

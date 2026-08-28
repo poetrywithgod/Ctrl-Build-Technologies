@@ -1,123 +1,212 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/ui/Button.astro';
+
+const featured = {
+  category: 'Digital Systems',
+  title: 'Building digital systems that actually work for the people who use them',
+  excerpt:
+    'Good software is more than a collection of features. It should simplify operations, reduce friction and give people better ways to get work done.',
+  date: '28 August 2026',
+  readTime: '6 min read',
+};
+
+const insights = [
+  {
+    category: 'Software Engineering',
+    title: 'What businesses should consider before building custom software',
+    excerpt:
+      'Custom software can create a serious competitive advantage, but only when the underlying problem is understood before development begins.',
+    date: '25 August 2026',
+    readTime: '5 min read',
+  },
+  {
+    category: 'AI & Automation',
+    title: 'Where AI fits into modern business systems',
+    excerpt:
+      'AI is becoming part of everyday business infrastructure. Here is where it can create genuine value instead of becoming another unnecessary feature.',
+    date: '21 August 2026',
+    readTime: '7 min read',
+  },
+  {
+    category: 'Web Development',
+    title: 'Why performance should be part of the product from day one',
+    excerpt:
+      'Performance is not something to fix after launch. The architecture, content and interface decisions made early can determine how fast a product feels.',
+    date: '18 August 2026',
+    readTime: '5 min read',
+  },
+  {
+    category: 'Business Systems',
+    title: 'From spreadsheets to connected business systems',
+    excerpt:
+      'Spreadsheets can be useful, but growing organisations eventually need systems that connect information, people and processes.',
+    date: '14 August 2026',
+    readTime: '6 min read',
+  },
+  {
+    category: 'Digital Strategy',
+    title: 'Technology should solve a business problem first',
+    excerpt:
+      'The best technology projects begin with a clear operational problem, not a list of technologies someone wants to use.',
+    date: '10 August 2026',
+    readTime: '4 min read',
+  },
+  {
+    category: 'Product Engineering',
+    title: 'Turning an idea into a product people can actually use',
+    excerpt:
+      'Taking an idea from concept to production requires more than writing code. It requires product thinking, engineering discipline and continuous iteration.',
+    date: '06 August 2026',
+    readTime: '7 min read',
+  },
+];
 ---
 
 <Layout
   title="Insights | CtrlBuild Technologies"
-  description="Ideas, perspectives and practical insights from CtrlBuild Technologies on software engineering, digital systems, AI and technology."
+  description="Ideas, perspectives and practical insights from CtrlBuild Technologies on software engineering, digital systems, AI, web development and technology."
 >
-  <main class="cb-insights-page">
-    <section class="cb-insights-hero">
+  <main class="cb-insights">
+    <section class="cb-insights__hero">
       <div class="cb-container">
-        <p class="cb-eyebrow">/ INSIGHTS</p>
+        <div class="cb-eyebrow">
+          <span class="cb-eyebrow__dot"></span>
+          CtrlBuild / Insights
+        </div>
 
-        <h1>
-          Thinking about
-          <span>technology.</span>
-        </h1>
+        <div class="cb-insights__hero-grid">
+          <div>
+            <h1>
+              Ideas for building
+              <span>better technology.</span>
+            </h1>
+          </div>
 
-        <p class="cb-insights-hero__intro">
-          Practical perspectives on software, digital systems, artificial
-          intelligence and the technology behind better ways of working.
-        </p>
+          <div class="cb-insights__hero-copy">
+            <p>
+              Practical perspectives on software engineering, digital systems,
+              AI and the technology behind ambitious organisations.
+            </p>
+
+            <div class="cb-insights__topics">
+              <a href="#latest">All</a>
+              <a href="#latest">Engineering</a>
+              <a href="#latest">AI</a>
+              <a href="#latest">Business systems</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="cb-insights-content">
+    <section class="cb-insights__featured">
       <div class="cb-container">
-        <div class="cb-insights-content__header">
-          <div>
-            <p class="cb-eyebrow">/ COMING SOON</p>
+        <a href="#" class="cb-featured-card">
+          <div class="cb-featured-card__visual">
+            <div class="cb-featured-card__grid"></div>
 
-            <h2>
-              Useful ideas are
-              <span>on the way.</span>
-            </h2>
+            <div class="cb-featured-card__orb">
+              <span></span>
+            </div>
+
+            <div class="cb-featured-card__label">
+              FEATURED INSIGHT
+            </div>
+          </div>
+
+          <div class="cb-featured-card__content">
+            <div class="cb-post-meta">
+              <span>{featured.category}</span>
+              <span>{featured.date}</span>
+              <span>{featured.readTime}</span>
+            </div>
+
+            <h2>{featured.title}</h2>
+
+            <p>{featured.excerpt}</p>
+
+            <span class="cb-read-more">
+              Read insight
+              <span aria-hidden="true">↗</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="cb-insights__latest" id="latest">
+      <div class="cb-container">
+        <div class="cb-section-heading">
+          <div>
+            <div class="cb-eyebrow">
+              <span class="cb-eyebrow__dot"></span>
+              Latest thinking
+            </div>
+
+            <h2>Insights from the team.</h2>
           </div>
 
           <p>
-            We are preparing articles and practical guides covering the
-            technology decisions, engineering principles and digital
-            challenges that businesses encounter every day.
+            Ideas, lessons and practical observations from building digital
+            products and business systems.
           </p>
         </div>
 
-        <div class="cb-insights-topics">
-          <article class="cb-insight-topic">
-            <span class="cb-insight-topic__number">01</span>
+        <div class="cb-insight-grid">
+          {insights.map((insight, index) => (
+            <article class:list={['cb-insight-card', index === 0 && 'cb-insight-card--featured']}>
+              <a href="#">
+                <div class="cb-insight-card__top">
+                  <span class="cb-insight-card__number">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
 
-            <div>
-              <p class="cb-eyebrow">ENGINEERING</p>
-              <h3>Building better software systems</h3>
-              <p>
-                Architecture, development practices, scalability and the
-                engineering decisions behind reliable digital products.
-              </p>
-            </div>
-          </article>
+                  <span class="cb-insight-card__arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </div>
 
-          <article class="cb-insight-topic">
-            <span class="cb-insight-topic__number">02</span>
+                <div class="cb-post-meta">
+                  <span>{insight.category}</span>
+                  <span>{insight.readTime}</span>
+                </div>
 
-            <div>
-              <p class="cb-eyebrow">DIGITAL SYSTEMS</p>
-              <h3>Technology for better operations</h3>
-              <p>
-                How organisations can replace fragmented processes with
-                connected systems, automation and useful information.
-              </p>
-            </div>
-          </article>
+                <h3>{insight.title}</h3>
 
-          <article class="cb-insight-topic">
-            <span class="cb-insight-topic__number">03</span>
+                <p>{insight.excerpt}</p>
 
-            <div>
-              <p class="cb-eyebrow">AI & DATA</p>
-              <h3>Making intelligent technology practical</h3>
-              <p>
-                Practical applications of AI, data and automation that solve
-                real problems rather than simply adding technology for its own
-                sake.
-              </p>
-            </div>
-          </article>
-
-          <article class="cb-insight-topic">
-            <span class="cb-insight-topic__number">04</span>
-
-            <div>
-              <p class="cb-eyebrow">PRODUCT</p>
-              <h3>From idea to digital product</h3>
-              <p>
-                Lessons around product discovery, MVP development, technical
-                foundations and building products that can grow.
-              </p>
-            </div>
-          </article>
+                <div class="cb-insight-card__footer">
+                  <span>{insight.date}</span>
+                  <span>Read more</span>
+                </div>
+              </a>
+            </article>
+          ))}
         </div>
       </div>
     </section>
 
-    <section class="cb-insights-cta">
+    <section class="cb-insights__cta">
       <div class="cb-container">
-        <div class="cb-insights-cta__panel">
-          <p class="cb-eyebrow">/ HAVE SOMETHING TO BUILD?</p>
+        <div class="cb-cta">
+          <div>
+            <div class="cb-eyebrow">
+              <span class="cb-eyebrow__dot"></span>
+              Have a technology challenge?
+            </div>
 
-          <h2>
-            You don't have to
-            <span>wait.</span>
-          </h2>
+            <h2>Let's build something<br /><span>that matters.</span></h2>
+          </div>
 
-          <p>
-            Our insights are coming soon, but your project does not have to.
-            Tell us what you are trying to build or improve.
-          </p>
+          <div class="cb-cta__action">
+            <p>
+              Tell us what you're trying to solve. We'll help turn the idea
+              into something real.
+            </p>
 
-          <a href="/contact/">
-            Start a conversation
-            <span aria-hidden="true">↗</span>
-          </a>
+            <Button href="/contact/" label="Start a conversation" size="lg" />
+          </div>
         </div>
       </div>
     </section>
@@ -125,180 +214,392 @@ import Layout from '../../layouts/Layout.astro';
 </Layout>
 
 <style>
-  .cb-insights-hero {
-    padding: 9rem 0 7rem;
-    border-bottom: 1px solid var(--color-border);
+  .cb-insights {
+    overflow: hidden;
   }
 
-  .cb-insights-hero h1 {
-    max-width: 10ch;
-    margin-top: 1.25rem;
-    font-size: clamp(3.2rem, 8vw, 7rem);
+  .cb-insights__hero {
+    padding: 7rem 0 6rem;
+  }
+
+  .cb-insights__hero-grid {
+    display: grid;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .cb-insights__hero h1 {
+    max-width: 850px;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 600;
     line-height: 0.94;
     letter-spacing: -0.065em;
   }
 
-  .cb-insights-hero h1 span,
-  .cb-insights-content__header h2 span,
-  .cb-insights-cta__panel h2 span {
+  .cb-insights__hero h1 span {
     color: var(--color-brand-coral);
   }
 
-  .cb-insights-hero__intro {
-    max-width: 42rem;
+  .cb-insights__hero-copy {
+    max-width: 500px;
+  }
+
+  .cb-insights__hero-copy > p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .cb-insights__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     margin-top: 2rem;
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    line-height: 1.85;
   }
 
-  .cb-insights-content {
-    padding: 7rem 0 2rem;
-  }
-
-  .cb-insights-content__header {
-    display: grid;
-    gap: 2rem;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .cb-insights-content__header h2 {
-    max-width: 11ch;
-    margin-top: 1rem;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 0.97;
-    letter-spacing: -0.06em;
-  }
-
-  .cb-insights-content__header > p {
-    max-width: 34rem;
-    color: var(--color-text-muted);
-    line-height: 1.8;
-  }
-
-  .cb-insights-topics {
-    display: grid;
-  }
-
-  .cb-insight-topic {
-    display: grid;
-    grid-template-columns: 3rem minmax(0, 1fr);
-    gap: 1rem;
-    padding: 3.5rem 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .cb-insight-topic__number {
-    padding-top: 0.2rem;
-    color: var(--color-brand-coral);
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 600;
-  }
-
-  .cb-insight-topic h3 {
-    max-width: 20ch;
-    margin-top: 0.75rem;
-    font-size: clamp(1.7rem, 3vw, 2.5rem);
-    line-height: 1;
-    letter-spacing: -0.04em;
-  }
-
-  .cb-insight-topic p:not(.cb-eyebrow) {
-    max-width: 36rem;
-    margin-top: 1rem;
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    line-height: 1.8;
-  }
-
-  .cb-insights-cta {
-    padding: 7rem 0 8rem;
-  }
-
-  .cb-insights-cta__panel {
-    padding: 4rem 2rem;
+  .cb-insights__topics a {
     border: 1px solid var(--color-border);
-    background: var(--color-bg-subtle);
-  }
-
-  .cb-insights-cta__panel h2 {
-    max-width: 10ch;
-    margin-top: 1rem;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 0.97;
-    letter-spacing: -0.06em;
-  }
-
-  .cb-insights-cta__panel > p:not(.cb-eyebrow) {
-    max-width: 34rem;
-    margin-top: 1.5rem;
+    border-radius: 999px;
+    padding: 0.55rem 0.9rem;
     color: var(--color-text-muted);
-    line-height: 1.8;
+    font-size: 0.78rem;
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease;
   }
 
-  .cb-insights-cta__panel a {
+  .cb-insights__topics a:hover {
+    border-color: var(--color-brand-coral);
+    color: var(--color-text);
+    background: color-mix(
+      in srgb,
+      var(--color-brand-coral) 8%,
+      transparent
+    );
+  }
+
+  .cb-insights__featured {
+    padding-bottom: 7rem;
+  }
+
+  .cb-featured-card {
+    display: grid;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 1.5rem;
+    background: var(--color-surface);
+  }
+
+  .cb-featured-card__visual {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    background:
+      radial-gradient(
+        circle at 70% 45%,
+        color-mix(in srgb, var(--color-brand-coral) 22%, transparent),
+        transparent 34%
+      ),
+      var(--color-brand-burgundy);
+  }
+
+  .cb-featured-card__grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    background-image:
+      linear-gradient(
+        color-mix(in srgb, white 8%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, white 8%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, black, transparent);
+  }
+
+  .cb-featured-card__orb {
+    position: absolute;
+    top: 50%;
+    left: 62%;
+    width: 210px;
+    height: 210px;
+    transform: translate(-50%, -50%);
+    border: 1px solid color-mix(in srgb, white 25%, transparent);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 32px color-mix(in srgb, white 3%, transparent),
+      0 0 0 64px color-mix(in srgb, white 2%, transparent);
+  }
+
+  .cb-featured-card__orb span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 52px;
+    height: 52px;
+    transform: translate(-50%, -50%);
+    border-radius: 0.7rem;
+    background: var(--color-brand-coral);
+    box-shadow: 0 0 50px color-mix(in srgb, var(--color-brand-coral) 50%, transparent);
+  }
+
+  .cb-featured-card__label {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+  }
+
+  .cb-featured-card__content {
+    padding: 2rem;
+  }
+
+  .cb-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .cb-post-meta span + span::before {
+    content: '·';
+    margin-right: 0.7rem;
+    opacity: 0.5;
+  }
+
+  .cb-featured-card h2 {
+    max-width: 800px;
+    margin: 1.5rem 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    line-height: 1;
+    letter-spacing: -0.055em;
+  }
+
+  .cb-featured-card p {
+    max-width: 680px;
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+
+  .cb-read-more {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     margin-top: 2rem;
     color: var(--color-brand-coral);
-    font-family: var(--font-display);
+    font-size: 0.9rem;
     font-weight: 600;
   }
 
-  .cb-insights-cta__panel a span {
+  .cb-read-more span {
     transition: transform 180ms ease;
   }
 
-  .cb-insights-cta__panel a:hover span {
+  .cb-featured-card:hover .cb-read-more span {
     transform: translate(3px, -3px);
   }
 
-  @media (min-width: 700px) {
-    .cb-insights-hero {
-      padding: 11rem 0 8rem;
-    }
+  .cb-insights__latest {
+    padding: 6rem 0 8rem;
+    border-top: 1px solid var(--color-border);
+  }
 
-    .cb-insights-content {
-      padding-top: 9rem;
-    }
+  .cb-section-heading {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
 
-    .cb-insights-content__header {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  .cb-section-heading h2 {
+    margin: 1.25rem 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-section-heading > p {
+    max-width: 450px;
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .cb-insight-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .cb-insight-card {
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-insight-card a {
+    display: flex;
+    min-height: 390px;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .cb-insight-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+  }
+
+  .cb-insight-card__number {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+  }
+
+  .cb-insight-card__arrow {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text-muted);
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      color 180ms ease;
+  }
+
+  .cb-insight-card:hover .cb-insight-card__arrow {
+    transform: translate(3px, -3px);
+    background: var(--color-brand-coral);
+    color: white;
+  }
+
+  .cb-insight-card h3 {
+    max-width: 500px;
+    margin: 1rem 0;
+    font-family: var(--font-display);
+    font-size: 1.65rem;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .cb-insight-card p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .cb-insight-card__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 2rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+  }
+
+  .cb-insights__cta {
+    padding: 0 0 7rem;
+  }
+
+  .cb-cta {
+    display: grid;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-cta h2 {
+    margin: 1.25rem 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-cta h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-cta__action {
+    max-width: 420px;
+  }
+
+  .cb-cta__action p {
+    margin: 0 0 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  @media (min-width: 768px) {
+    .cb-insights__hero-grid {
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
       align-items: end;
-      gap: 5rem;
-      padding-bottom: 6rem;
     }
 
-    .cb-insight-topic {
-      grid-template-columns: 5rem minmax(0, 1fr);
-      gap: 2rem;
-      padding: 5rem 0;
+    .cb-featured-card {
+      grid-template-columns: 0.9fr 1.1fr;
     }
 
-    .cb-insights-cta__panel {
-      padding: 6rem;
+    .cb-featured-card__visual {
+      min-height: 500px;
+    }
+
+    .cb-featured-card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3.5rem;
+    }
+
+    .cb-section-heading {
+      grid-template-columns: 1fr 0.7fr;
+      align-items: end;
+    }
+
+    .cb-insight-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cb-cta {
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: end;
     }
   }
 
-  @media (max-width: 600px) {
-    .cb-insights-hero {
-      padding: 7rem 0 5rem;
-    }
-
-    .cb-insights-content {
-      padding-top: 6rem;
-    }
-
-    .cb-insights-cta {
-      padding: 6rem 0;
+  @media (min-width: 1100px) {
+    .cb-insight-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cb-insights-cta__panel a span {
+    .cb-insights a,
+    .cb-insights span {
       transition: none;
     }
   }
