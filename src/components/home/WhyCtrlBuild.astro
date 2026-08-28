@@ -1,0 +1,328 @@
+<section class="cb-why" id="why-ctrlbuild">
+  <div class="cb-container">
+    <div class="cb-why__header">
+      <div>
+        <p class="cb-eyebrow">/ WHY CTRLBUILD</p>
+        <h2>Technology should work <span>for the business.</span></h2>
+      </div>
+
+      <p class="cb-why__intro">
+        We combine software engineering with a practical understanding of
+        business operations, so the systems we build are useful beyond the
+        screen.
+      </p>
+    </div>
+
+    <div class="cb-why__grid">
+      <article class="cb-why__card cb-why__card--featured">
+        <span class="cb-why__number">01</span>
+        <div class="cb-why__icon" aria-hidden="true">⌁</div>
+        <div>
+          <h3>Engineering first.</h3>
+          <p>
+            We care about the foundations: architecture, performance,
+            security, maintainability and the quality of the code behind the
+            product.
+          </p>
+        </div>
+      </article>
+
+      <article class="cb-why__card">
+        <span class="cb-why__number">02</span>
+        <div class="cb-why__icon" aria-hidden="true">⌘</div>
+        <div>
+          <h3>Business aware.</h3>
+          <p>
+            We start with the workflow, users and operational reality. The
+            technology follows the problem, not the other way around.
+          </p>
+        </div>
+      </article>
+
+      <article class="cb-why__card">
+        <span class="cb-why__number">03</span>
+        <div class="cb-why__icon" aria-hidden="true">↗</div>
+        <div>
+          <h3>Built to grow.</h3>
+          <p>
+            A first release should create a foundation for what comes next.
+            We design systems with future users, data and requirements in mind.
+          </p>
+        </div>
+      </article>
+
+      <article class="cb-why__card">
+        <span class="cb-why__number">04</span>
+        <div class="cb-why__icon" aria-hidden="true">+</div>
+        <div>
+          <h3>Purposeful technology.</h3>
+          <p>
+            We choose technologies because they solve the problem well, not
+            simply because they are fashionable or familiar.
+          </p>
+        </div>
+      </article>
+
+      <article class="cb-why__card">
+        <span class="cb-why__number">05</span>
+        <div class="cb-why__icon" aria-hidden="true">◌</div>
+        <div>
+          <h3>Long-term thinking.</h3>
+          <p>
+            Launch is one milestone. We think about monitoring, improvements,
+            integrations and the operational life of the software.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="cb-why__bottom">
+      <div class="cb-why__signal" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <p>
+        <span>CTRLBUILD PRINCIPLE</span>
+        Build with purpose. <strong>Engineer for what comes next.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cb-why {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-why::after {
+    position: absolute;
+    right: -12rem;
+    bottom: -18rem;
+    width: 30rem;
+    height: 30rem;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    content: '';
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .cb-why__header {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .cb-why__header h2 {
+    max-width: 12ch;
+    margin-top: 1rem;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-why__header h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-why__intro {
+    max-width: 35rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cb-why__grid {
+    display: grid;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .cb-why__card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.5rem 3rem 1fr;
+    gap: 1rem;
+    min-height: 17rem;
+    padding: 1.5rem;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+    transition:
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .cb-why__card:hover {
+    z-index: 1;
+    background: var(--color-surface);
+    transform: translateY(-3px);
+  }
+
+  .cb-why__card--featured {
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--color-brand-burgundy) 9%, var(--color-bg)),
+        var(--color-bg)
+      );
+  }
+
+  .cb-why__number {
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .cb-why__icon {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+    place-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+  }
+
+  .cb-why__card h3 {
+    max-width: 18rem;
+    font-size: clamp(1.3rem, 2vw, 1.65rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .cb-why__card p {
+    max-width: 29rem;
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    line-height: 1.75;
+  }
+
+  .cb-why__bottom {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .cb-why__signal {
+    display: flex;
+    align-items: end;
+    gap: 0.2rem;
+    width: 3rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .cb-why__signal span {
+    width: 0.3rem;
+    height: 35%;
+    background: var(--color-brand-coral);
+  }
+
+  .cb-why__signal span:nth-child(2) {
+    height: 60%;
+  }
+
+  .cb-why__signal span:nth-child(3) {
+    height: 85%;
+  }
+
+  .cb-why__signal span:nth-child(4) {
+    height: 100%;
+  }
+
+  .cb-why__bottom p {
+    display: grid;
+    gap: 0.35rem;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  .cb-why__bottom p span {
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cb-why__bottom strong {
+    color: var(--color-brand-coral);
+  }
+
+  @media (min-width: 700px) {
+    .cb-why {
+      padding: 9rem 0;
+    }
+
+    .cb-why__header {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
+      align-items: end;
+    }
+
+    .cb-why__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cb-why__card--featured {
+      grid-column: 1 / -1;
+    }
+
+    .cb-why__card--featured {
+      min-height: 19rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .cb-why {
+      padding: 10rem 0;
+    }
+
+    .cb-why__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cb-why__card--featured {
+      grid-column: 1 / -1;
+    }
+
+    .cb-why__card {
+      min-height: 18rem;
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .cb-why {
+      padding: 6rem 0;
+    }
+
+    .cb-why__card {
+      grid-template-columns: 2rem 2.5rem 1fr;
+      min-height: 15rem;
+      padding: 1.25rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-why__card {
+      transition: none;
+    }
+
+    .cb-why__card:hover {
+      transform: none;
+    }
+  }
+</style>
