@@ -1,0 +1,459 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section class="cb-hero">
+  <div class="cb-container cb-hero__inner">
+    <div class="cb-hero__content">
+      <div class="cb-eyebrow">
+        <span class="cb-eyebrow__dot"></span>
+        Software engineering · Digital solutions
+      </div>
+
+      <h1>
+        We build the
+        <span>technology</span>
+        your business needs to move forward.
+      </h1>
+
+      <p class="cb-hero__lead">
+        CtrlBuild Technologies designs and builds high-performance web
+        applications, mobile apps, business systems, AI-powered solutions and
+        digital products for ambitious organisations.
+      </p>
+
+      <div class="cb-hero__actions">
+        <Button href="/contact/" label="Start a project" size="lg" />
+
+        <Button
+          href="/work/"
+          label="Explore our work"
+          variant="secondary"
+          size="lg"
+        />
+      </div>
+
+      <div class="cb-hero__meta">
+        <div>
+          <strong>Nigeria</strong>
+          <span>Based in Nigeria</span>
+        </div>
+
+        <div>
+          <strong>Worldwide</strong>
+          <span>Remote delivery</span>
+        </div>
+
+        <div>
+          <strong>Built to scale</strong>
+          <span>Modern technology</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-hero__visual" aria-hidden="true">
+      <div class="cb-hero__orb cb-hero__orb--one"></div>
+      <div class="cb-hero__orb cb-hero__orb--two"></div>
+
+      <div class="cb-hero__grid"></div>
+
+      <div class="cb-hero__terminal">
+        <div class="cb-hero__terminal-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+          <small>ctrlbuild / systems</small>
+        </div>
+
+        <div class="cb-hero__terminal-body">
+          <div class="cb-code-line">
+            <span class="cb-code-muted">const</span>
+            <span class="cb-code-accent">solution</span>
+            <span>=</span>
+            <span class="cb-code-brace">{'{'}</span>
+          </div>
+
+          <div class="cb-code-line cb-code-indent">
+            <span class="cb-code-key">product:</span>
+            <span class="cb-code-string">'your idea'</span>
+          </div>
+
+          <div class="cb-code-line cb-code-indent">
+            <span class="cb-code-key">technology:</span>
+            <span class="cb-code-string">'modern'</span>
+          </div>
+
+          <div class="cb-code-line cb-code-indent">
+            <span class="cb-code-key">analytics:</span>
+            <span class="cb-code-bool">true</span>
+          </div>
+
+          <div class="cb-code-line cb-code-indent">
+            <span class="cb-code-key">intelligence:</span>
+            <span class="cb-code-bool">true</span>
+          </div>
+
+          <div class="cb-code-line">
+            <span class="cb-code-brace">{'}'}</span>
+          </div>
+
+          <div class="cb-code-line cb-code-result">
+            <span>→</span>
+            <span>Build. Launch. Grow.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cb-hero__floating-card cb-hero__floating-card--top">
+        <span class="cb-status-dot"></span>
+        <span>System online</span>
+      </div>
+
+      <div class="cb-hero__floating-card cb-hero__floating-card--bottom">
+        <strong>∞</strong>
+        <span>Ideas → Products</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cb-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 4rem;
+  }
+
+  .cb-hero::before {
+    position: absolute;
+    top: -18rem;
+    right: -12rem;
+    width: 38rem;
+    height: 38rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-brand-coral) 12%, transparent),
+      transparent 68%
+    );
+    content: '';
+    pointer-events: none;
+  }
+
+  .cb-hero__inner {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .cb-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 48rem;
+  }
+
+  .cb-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .cb-eyebrow__dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--color-brand-coral);
+    box-shadow: 0 0 0 5px
+      color-mix(in srgb, var(--color-brand-coral) 12%, transparent);
+  }
+
+  .cb-hero h1 {
+    max-width: 11ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 9vw, 6.7rem);
+    font-weight: 700;
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+  }
+
+  .cb-hero h1 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-hero__lead {
+    max-width: 40rem;
+    margin: 2rem 0 0;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    line-height: 1.75;
+  }
+
+  .cb-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .cb-hero__meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 38rem;
+    margin-top: 3.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-hero__meta div {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem 1rem 0 0;
+  }
+
+  .cb-hero__meta strong {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+  }
+
+  .cb-hero__meta span {
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+  }
+
+  .cb-hero__visual {
+    position: relative;
+    min-height: 30rem;
+    isolation: isolate;
+  }
+
+  .cb-hero__grid {
+    position: absolute;
+    inset: 5% 0;
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-text) 7%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--color-text) 7%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 2rem 2rem;
+    mask-image: radial-gradient(circle, black 25%, transparent 75%);
+    opacity: 0.8;
+  }
+
+  .cb-hero__orb {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .cb-hero__orb--one {
+    top: 10%;
+    right: 8%;
+    width: 15rem;
+    height: 15rem;
+    background: color-mix(
+      in srgb,
+      var(--color-brand-coral) 22%,
+      transparent
+    );
+    filter: blur(50px);
+  }
+
+  .cb-hero__orb--two {
+    bottom: 8%;
+    left: 5%;
+    width: 12rem;
+    height: 12rem;
+    background: color-mix(
+      in srgb,
+      var(--color-brand-burgundy) 22%,
+      transparent
+    );
+    filter: blur(45px);
+  }
+
+  .cb-hero__terminal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(90%, 31rem);
+    overflow: hidden;
+    border: 1px solid
+      color-mix(in srgb, var(--color-text) 12%, transparent);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    box-shadow:
+      0 2rem 5rem color-mix(in srgb, #000 16%, transparent),
+      0 0 0 1px color-mix(in srgb, var(--color-brand-coral) 5%, transparent);
+    backdrop-filter: blur(20px);
+    transform: translate(-50%, -50%) rotate(-3deg);
+  }
+
+  .cb-hero__terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-hero__terminal-bar span {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--color-border-strong);
+  }
+
+  .cb-hero__terminal-bar small {
+    margin-left: 0.5rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+  }
+
+  .cb-hero__terminal-body {
+    padding: 1.5rem;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 2;
+  }
+
+  .cb-code-line {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .cb-code-indent {
+    padding-left: 1.25rem;
+  }
+
+  .cb-code-muted {
+    color: var(--color-text-muted);
+  }
+
+  .cb-code-accent,
+  .cb-code-string {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-code-key {
+    color: var(--color-text-muted);
+  }
+
+  .cb-code-bool {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-code-brace {
+    color: var(--color-text);
+  }
+
+  .cb-code-result {
+    margin-top: 1rem;
+    color: var(--color-brand-coral);
+    font-weight: 700;
+  }
+
+  .cb-hero__floating-card {
+    position: absolute;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    box-shadow: 0 1rem 3rem color-mix(in srgb, #000 10%, transparent);
+    backdrop-filter: blur(15px);
+    color: var(--color-text);
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .cb-hero__floating-card--top {
+    top: 18%;
+    right: 0;
+  }
+
+  .cb-hero__floating-card--bottom {
+    bottom: 15%;
+    left: 0;
+  }
+
+  .cb-hero__floating-card--bottom strong {
+    font-size: 1.15rem;
+    color: var(--color-brand-coral);
+  }
+
+  .cb-status-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: #35b86f;
+    box-shadow: 0 0 0 4px rgba(53, 184, 111, 0.12);
+  }
+
+  @media (min-width: 900px) {
+    .cb-hero {
+      padding: 7rem 0 6rem;
+    }
+
+    .cb-hero__inner {
+      grid-template-columns: minmax(0, 1.05fr) minmax(24rem, 0.95fr);
+      min-height: 40rem;
+    }
+
+    .cb-hero__visual {
+      min-height: 38rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .cb-hero__meta {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-hero__meta div {
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.8rem;
+    }
+
+    .cb-hero__visual {
+      min-height: 24rem;
+    }
+
+    .cb-hero__terminal {
+      width: 96%;
+    }
+
+    .cb-hero__terminal-body {
+      padding: 1.1rem;
+      font-size: 0.68rem;
+    }
+
+    .cb-hero__floating-card--top {
+      right: -0.5rem;
+    }
+
+    .cb-hero__floating-card--bottom {
+      left: -0.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-hero__terminal {
+      transform: translate(-50%, -50%);
+    }
+  }
+</style>
