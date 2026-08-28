@@ -11,17 +11,9 @@ import Button from '../ui/Button.astro';
       </div>
 
       <h1 class="cb-hero__headline">
-        <span class="cb-hero__headline-welcome">
-          If you can think it,<br />
-          <span>we can build it.</span>
-        </span>
+        <span class="cb-hero__headline-welcome">If you can <span class="cb-hero__headline-coral">think it</span>,<br />we can build it.</span>
 
-        <span class="cb-hero__headline-main">
-          We build the<br />
-          <span>technology</span><br />
-          your business needs<br />
-          to move forward.
-        </span>
+        <span class="cb-hero__headline-main">We build the<br /><span class="cb-hero__headline-coral">technology</span><br />your business needs<br />to move forward.</span>
       </h1>
 
       <p class="cb-hero__lead">
@@ -191,21 +183,22 @@ import Button from '../ui/Button.astro';
     letter-spacing: -0.065em;
   }
 
-  .cb-hero h1 span {
-    color: var(--color-brand-coral);
-  }
+  .cb-hero h1 span { color: inherit; }
 
-  .cb-hero__headline { position: relative; min-height: 11.3em; }
+  .cb-hero__headline-welcome,
+  .cb-hero__headline-main { color: #FAF5F2; }
 
-  .cb-hero__headline-welcome, .cb-hero__headline-main { display: block; }
+  .cb-hero__headline-coral { color: #FF7859 !important; }
 
-  .cb-hero__headline-welcome { animation: cb-hero-welcome-out 0.7s ease 5s forwards; }
+  .cb-hero__headline { display: grid; margin: 0; }
 
-  .cb-hero__headline-main { position: absolute; inset: 0; opacity: 0; transform: translateY(1rem); animation: cb-hero-main-in 0.8s ease 5s forwards; }
+  .cb-hero__headline-welcome, .cb-hero__headline-main { grid-area: 1 / 1; display: block; align-self: start; }
 
-   cb-hero-welcome-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-1rem); } }
+  .cb-hero__headline-welcome { opacity: 1; transform: translateY(0); animation: cb-hero-welcome-out 0.7s cubic-bezier(0.22, 1, 0.36, 1) 5s forwards; }
 
-   cb-hero-main-in { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+  .cb-hero__headline-main { opacity: 0; transform: translateY(1.25rem); animation: cb-hero-main-in 0.8s ease 5s forwards; }
+  @keyframes cb-hero-welcome-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-1.25rem); } }
+  @keyframes cb-hero-main-in { from { opacity: 0; transform: translateY(1.25rem); } to { opacity: 1; transform: translateY(0); } }
 
   .cb-hero__lead {
     max-width: 40rem;
@@ -431,7 +424,7 @@ import Button from '../ui/Button.astro';
 
     .cb-hero__inner {
       grid-template-columns: minmax(0, 1.05fr) minmax(24rem, 0.95fr);
-      min-height: 40rem;
+      min-height: 34rem;
     }
 
     .cb-hero__visual {
@@ -475,7 +468,7 @@ import Button from '../ui/Button.astro';
 
   @media (prefers-reduced-motion: reduce) {
     .cb-hero__headline-welcome { display: none; animation: none; }
-    .cb-hero__headline-main { position: static; opacity: 1; transform: none; animation: none; }
+    .cb-hero__headline-main { opacity: 1; transform: none; animation: none; }
 
     .cb-hero__terminal {
       transform: translate(-50%, -50%);
