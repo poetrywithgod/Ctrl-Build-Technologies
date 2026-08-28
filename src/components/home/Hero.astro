@@ -10,10 +10,18 @@ import Button from '../ui/Button.astro';
         Software engineering · Digital solutions
       </div>
 
-      <h1>
-        We build the
-        <span>technology</span>
-        your business needs to move forward.
+      <h1 class="cb-hero__headline">
+        <span class="cb-hero__headline-welcome">
+          If you can think it,<br />
+          <span>we can build it.</span>
+        </span>
+
+        <span class="cb-hero__headline-main">
+          We build the<br />
+          <span>technology</span><br />
+          your business needs<br />
+          to move forward.
+        </span>
       </h1>
 
       <p class="cb-hero__lead">
@@ -186,6 +194,18 @@ import Button from '../ui/Button.astro';
   .cb-hero h1 span {
     color: var(--color-brand-coral);
   }
+
+  .cb-hero__headline { position: relative; min-height: 11.3em; }
+
+  .cb-hero__headline-welcome, .cb-hero__headline-main { display: block; }
+
+  .cb-hero__headline-welcome { animation: cb-hero-welcome-out 0.7s ease 5s forwards; }
+
+  .cb-hero__headline-main { position: absolute; inset: 0; opacity: 0; transform: translateY(1rem); animation: cb-hero-main-in 0.8s ease 5s forwards; }
+
+   cb-hero-welcome-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-1rem); } }
+
+   cb-hero-main-in { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
 
   .cb-hero__lead {
     max-width: 40rem;
@@ -451,7 +471,12 @@ import Button from '../ui/Button.astro';
     }
   }
 
+  @media (max-width: 520px) { .cb-hero__headline { min-height: 12.5em; } }
+
   @media (prefers-reduced-motion: reduce) {
+    .cb-hero__headline-welcome { display: none; animation: none; }
+    .cb-hero__headline-main { position: static; opacity: 1; transform: none; animation: none; }
+
     .cb-hero__terminal {
       transform: translate(-50%, -50%);
     }
