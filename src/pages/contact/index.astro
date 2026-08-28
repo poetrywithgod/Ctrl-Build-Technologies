@@ -1,0 +1,475 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact | CtrlBuild Technologies"
+  description="Tell CtrlBuild Technologies what you are trying to build, improve or solve. Start a conversation about your next software or digital project."
+>
+  <main class="cb-contact-page">
+    <section class="cb-contact-hero">
+      <div class="cb-container">
+        <p class="cb-eyebrow">/ CONTACT</p>
+
+        <h1>
+          Let's build something
+          <span>that works.</span>
+        </h1>
+
+        <p class="cb-contact-hero__intro">
+          Have a business problem, a product idea or a system that needs
+          improvement? Tell us what you are trying to achieve and we will
+          help you work out the right digital approach.
+        </p>
+      </div>
+    </section>
+
+    <section class="cb-contact-main">
+      <div class="cb-container">
+        <div class="cb-contact-grid">
+          <div class="cb-contact-info">
+            <p class="cb-eyebrow">START A PROJECT</p>
+
+            <h2>
+              Tell us what
+              <span>you need.</span>
+            </h2>
+
+            <p>
+              You do not need to have everything figured out before reaching
+              out. Start with the problem, the opportunity or the idea.
+            </p>
+
+            <div class="cb-contact-steps">
+              <div class="cb-contact-step">
+                <span>01</span>
+                <div>
+                  <h3>Tell us about it</h3>
+                  <p>
+                    Give us a clear picture of what you are trying to build,
+                    improve or solve.
+                  </p>
+                </div>
+              </div>
+
+              <div class="cb-contact-step">
+                <span>02</span>
+                <div>
+                  <h3>We review the need</h3>
+                  <p>
+                    We look at the requirements, users, workflows and
+                    technical direction involved.
+                  </p>
+                </div>
+              </div>
+
+              <div class="cb-contact-step">
+                <span>03</span>
+                <div>
+                  <h3>We discuss the approach</h3>
+                  <p>
+                    We work through the right solution, scope and next steps
+                    for the project.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cb-contact-form-wrap">
+            <form class="cb-contact-form" data-contact-form>
+              <div class="cb-form-field">
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div class="cb-form-field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+
+              <div class="cb-form-field">
+                <label for="company">Company / Organisation</label>
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="Your company or organisation"
+                />
+              </div>
+
+              <div class="cb-form-field">
+                <label for="project-type">What do you need?</label>
+                <select id="project-type" name="projectType" required>
+                  <option value="" selected disabled>
+                    Select a project type
+                  </option>
+                  <option value="custom-software">Custom software</option>
+                  <option value="web-application">Web application</option>
+                  <option value="mobile-product">Mobile product</option>
+                  <option value="business-system">Business system</option>
+                  <option value="ai-solution">AI solution</option>
+                  <option value="integration">Integration / automation</option>
+                  <option value="existing-system">Improve an existing system</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+
+              <div class="cb-form-field">
+                <label for="message">Project details</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="7"
+                  placeholder="Tell us about the problem, idea or system you want to build."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit">
+                Send enquiry
+                <span aria-hidden="true">↗</span>
+              </button>
+
+              <p class="cb-contact-form__note">
+                This form is currently a project enquiry interface. Submission
+                handling will be connected to the CtrlBuild contact workflow.
+              </p>
+
+              <p
+                class="cb-contact-form__status"
+                data-form-status
+                aria-live="polite"
+                hidden
+              ></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-contact-bottom">
+      <div class="cb-container">
+        <div class="cb-contact-bottom__panel">
+          <div>
+            <p class="cb-eyebrow">/ NOT SURE WHERE TO START?</p>
+
+            <h2>
+              Start with the
+              <span>problem.</span>
+            </h2>
+          </div>
+
+          <p>
+            You do not need a complete technical specification. A conversation
+            about what is currently getting in the way is often the best place
+            to begin.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  const status = document.querySelector<HTMLElement>('[data-form-status]');
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!status) return;
+
+    status.hidden = false;
+    status.textContent =
+      'Your enquiry form is ready. Submission handling will be connected in the next stage.';
+  });
+</script>
+
+<style>
+  .cb-contact-hero {
+    padding: 9rem 0 7rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-contact-hero h1 {
+    max-width: 11ch;
+    margin-top: 1.25rem;
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+  }
+
+  .cb-contact-hero h1 span,
+  .cb-contact-info h2 span,
+  .cb-contact-bottom__panel h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-contact-hero__intro {
+    max-width: 42rem;
+    margin-top: 2rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .cb-contact-main {
+    padding: 7rem 0;
+  }
+
+  .cb-contact-grid {
+    display: grid;
+    gap: 5rem;
+  }
+
+  .cb-contact-info {
+    max-width: 36rem;
+  }
+
+  .cb-contact-info h2 {
+    max-width: 10ch;
+    margin-top: 1rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.97;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-contact-info > p:not(.cb-eyebrow) {
+    max-width: 31rem;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .cb-contact-steps {
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-contact-step {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-contact-step > span {
+    padding-top: 0.15rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+
+  .cb-contact-step h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .cb-contact-step p {
+    margin-top: 0.4rem;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  .cb-contact-form-wrap {
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-contact-form {
+    padding: 2rem;
+  }
+
+  .cb-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cb-form-field label {
+    color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .cb-form-field input,
+  .cb-form-field select,
+  .cb-form-field textarea {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font: inherit;
+    outline: none;
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .cb-form-field input,
+  .cb-form-field select {
+    min-height: 3.25rem;
+    padding: 0 0.9rem;
+  }
+
+  .cb-form-field textarea {
+    min-height: 10rem;
+    padding: 0.9rem;
+    resize: vertical;
+  }
+
+  .cb-form-field input::placeholder,
+  .cb-form-field textarea::placeholder {
+    color: var(--color-text-subtle);
+  }
+
+  .cb-form-field input:focus,
+  .cb-form-field select:focus,
+  .cb-form-field textarea:focus {
+    border-color: var(--color-brand-coral);
+    box-shadow: 0 0 0 1px var(--color-brand-coral);
+  }
+
+  .cb-contact-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3.25rem;
+    padding: 0 1.25rem;
+    border: 1px solid var(--color-brand-coral);
+    background: var(--color-brand-coral);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      background 180ms ease,
+      color 180ms ease;
+  }
+
+  .cb-contact-form button:hover {
+    background: transparent;
+    color: var(--color-brand-coral);
+  }
+
+  .cb-contact-form__note {
+    max-width: 30rem;
+    margin-top: 1rem;
+    color: var(--color-text-subtle);
+    font-size: 0.68rem;
+    line-height: 1.6;
+  }
+
+  .cb-contact-form__status {
+    margin-top: 1rem;
+    padding: 0.85rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .cb-contact-bottom {
+    padding: 0 0 8rem;
+  }
+
+  .cb-contact-bottom__panel {
+    display: grid;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .cb-contact-bottom__panel h2 {
+    max-width: 10ch;
+    margin-top: 1rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.97;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-contact-bottom__panel > p {
+    max-width: 34rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  @media (min-width: 700px) {
+    .cb-contact-hero {
+      padding: 11rem 0 8rem;
+    }
+
+    .cb-contact-main {
+      padding: 9rem 0;
+    }
+
+    .cb-contact-form {
+      padding: 3rem;
+    }
+
+    .cb-contact-bottom__panel {
+      padding: 5rem;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .cb-contact-grid {
+      grid-template-columns: minmax(0, 0.85fr) minmax(30rem, 1.15fr);
+      align-items: start;
+      gap: 6rem;
+    }
+
+    .cb-contact-bottom__panel {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      align-items: end;
+      gap: 5rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cb-contact-hero {
+      padding: 7rem 0 5rem;
+    }
+
+    .cb-contact-main {
+      padding: 6rem 0;
+    }
+
+    .cb-contact-bottom {
+      padding-bottom: 6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-form-field input,
+    .cb-form-field select,
+    .cb-form-field textarea,
+    .cb-contact-form button {
+      transition: none;
+    }
+  }
+</style>
