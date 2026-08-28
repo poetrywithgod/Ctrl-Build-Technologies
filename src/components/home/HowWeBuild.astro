@@ -1,0 +1,569 @@
+<section class="cb-process" id="process">
+  <div class="cb-container">
+    <div class="cb-process__header">
+      <div>
+        <p class="cb-eyebrow">/ HOW WE BUILD</p>
+        <h2>From <span>idea</span> to software that works.</h2>
+      </div>
+
+      <p class="cb-process__intro">
+        Great software is not just about writing code. We understand the
+        problem, design the right system, build it properly and stay focused
+        on what happens after launch.
+      </p>
+    </div>
+
+    <div class="cb-process__layout">
+      <ol class="cb-process__steps" aria-label="Our development process">
+        <li>
+          <button
+            type="button"
+            class="cb-process__step is-active"
+            data-process-step="0"
+            aria-selected="true"
+          >
+            <span class="cb-process__step-number">01</span>
+            <span class="cb-process__step-name">Discover</span>
+            <span class="cb-process__step-arrow" aria-hidden="true">↗</span>
+          </button>
+        </li>
+
+        <li>
+          <button
+            type="button"
+            class="cb-process__step"
+            data-process-step="1"
+            aria-selected="false"
+          >
+            <span class="cb-process__step-number">02</span>
+            <span class="cb-process__step-name">Design</span>
+            <span class="cb-process__step-arrow" aria-hidden="true">↗</span>
+          </button>
+        </li>
+
+        <li>
+          <button
+            type="button"
+            class="cb-process__step"
+            data-process-step="2"
+            aria-selected="false"
+          >
+            <span class="cb-process__step-number">03</span>
+            <span class="cb-process__step-name">Build</span>
+            <span class="cb-process__step-arrow" aria-hidden="true">↗</span>
+          </button>
+        </li>
+
+        <li>
+          <button
+            type="button"
+            class="cb-process__step"
+            data-process-step="3"
+            aria-selected="false"
+          >
+            <span class="cb-process__step-number">04</span>
+            <span class="cb-process__step-name">Test</span>
+            <span class="cb-process__step-arrow" aria-hidden="true">↗</span>
+          </button>
+        </li>
+
+        <li>
+          <button
+            type="button"
+            class="cb-process__step"
+            data-process-step="4"
+            aria-selected="false"
+          >
+            <span class="cb-process__step-number">05</span>
+            <span class="cb-process__step-name">Deploy</span>
+            <span class="cb-process__step-arrow" aria-hidden="true">↗</span>
+          </button>
+        </li>
+
+        <li>
+          <button
+            type="button"
+            class="cb-process__step"
+            data-process-step="5"
+            aria-selected="false"
+          >
+            <span class="cb-process__step-number">06</span>
+            <span class="cb-process__step-name">Scale</span>
+            <span class="cb-process__step-arrow" aria-hidden="true">↗</span>
+          </button>
+        </li>
+      </ol>
+
+      <div class="cb-process__detail" data-process-detail>
+        <div class="cb-process__detail-top">
+          <span class="cb-process__detail-index" data-process-index>01</span>
+          <span class="cb-process__detail-label">PHASE</span>
+        </div>
+
+        <div class="cb-process__detail-content">
+          <p class="cb-process__detail-kicker" data-process-kicker>
+            Understand the opportunity
+          </p>
+
+          <h3 data-process-title>Discover</h3>
+
+          <p data-process-description>
+            We start by understanding your business, users, goals and
+            constraints. The result is a clear definition of what needs to be
+            built and why.
+          </p>
+
+          <div class="cb-process__detail-tags" data-process-tags>
+            <span>Requirements</span>
+            <span>Research</span>
+            <span>Strategy</span>
+          </div>
+        </div>
+
+        <div class="cb-process__detail-footer">
+          <span>CTRLBUILD / PROCESS</span>
+          <span data-process-progress>01 / 06</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-process__statement">
+      <span class="cb-process__statement-line"></span>
+      <p>Built deliberately. <strong>Not just quickly.</strong></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const processData = [
+    {
+      number: '01',
+      title: 'Discover',
+      kicker: 'Understand the opportunity',
+      description:
+        'We start by understanding your business, users, goals and constraints. The result is a clear definition of what needs to be built and why.',
+      tags: ['Requirements', 'Research', 'Strategy'],
+    },
+    {
+      number: '02',
+      title: 'Design',
+      kicker: 'Shape the right solution',
+      description:
+        'We translate requirements into user journeys, interfaces, system architecture and a practical technical plan before development begins.',
+      tags: ['UX / UI', 'Architecture', 'Planning'],
+    },
+    {
+      number: '03',
+      title: 'Build',
+      kicker: 'Engineer the product',
+      description:
+        'We turn the approved design into production-quality software using modern technologies, clean architecture and maintainable code.',
+      tags: ['Development', 'Integration', 'Engineering'],
+    },
+    {
+      number: '04',
+      title: 'Test',
+      kicker: 'Make it dependable',
+      description:
+        'We validate functionality, usability, performance, security and edge cases so the system is ready for real users and real workloads.',
+      tags: ['QA', 'Security', 'Performance'],
+    },
+    {
+      number: '05',
+      title: 'Deploy',
+      kicker: 'Put it into the real world',
+      description:
+        'We prepare the application for production, configure the required infrastructure and deploy it with the operational foundations it needs.',
+      tags: ['Infrastructure', 'CI / CD', 'Launch'],
+    },
+    {
+      number: '06',
+      title: 'Scale',
+      kicker: 'Keep improving',
+      description:
+        'Launch is not the end. We monitor, optimise and evolve the system as users, data, requirements and the business grow.',
+      tags: ['Monitoring', 'Optimisation', 'Growth'],
+    },
+  ];
+
+  const processRoot = document.querySelector('[data-process-detail]');
+  const processSteps = document.querySelectorAll<HTMLButtonElement>(
+    '[data-process-step]'
+  );
+
+  if (processRoot && processSteps.length) {
+    const index = processRoot.querySelector('[data-process-index]');
+    const kicker = processRoot.querySelector('[data-process-kicker]');
+    const title = processRoot.querySelector('[data-process-title]');
+    const description = processRoot.querySelector('[data-process-description]');
+    const tags = processRoot.querySelector('[data-process-tags]');
+    const progress = processRoot.querySelector('[data-process-progress]');
+
+    const updateProcess = (stepIndex: number) => {
+      const step = processData[stepIndex];
+
+      if (!step || !index || !kicker || !title || !description || !tags || !progress) {
+        return;
+      }
+
+      processSteps.forEach((button, buttonIndex) => {
+        const active = buttonIndex === stepIndex;
+
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-selected', String(active));
+      });
+
+      index.textContent = step.number;
+      kicker.textContent = step.kicker;
+      title.textContent = step.title;
+      description.textContent = step.description;
+      progress.textContent = `${step.number} / 06`;
+
+      tags.innerHTML = step.tags
+        .map((tag) => `<span>${tag}</span>`)
+        .join('');
+    };
+
+    processSteps.forEach((button) => {
+      button.addEventListener('click', () => {
+        const stepIndex = Number(button.dataset.processStep);
+
+        if (Number.isInteger(stepIndex)) {
+          updateProcess(stepIndex);
+        }
+      });
+    });
+  }
+</script>
+
+<style>
+  .cb-process {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-process::before {
+    position: absolute;
+    top: 8rem;
+    right: -18rem;
+    width: 34rem;
+    height: 34rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-brand-coral) 9%, transparent),
+      transparent 68%
+    );
+    content: '';
+    pointer-events: none;
+  }
+
+  .cb-process__header {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .cb-process__header h2 {
+    max-width: 12ch;
+    margin-top: 1rem;
+    font-size: clamp(2.7rem, 6vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-process__header h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-process__intro {
+    max-width: 36rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cb-process__layout {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .cb-process__steps {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--color-border);
+    list-style: none;
+  }
+
+  .cb-process__step {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 3rem 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.5rem;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-muted);
+    text-align: left;
+    cursor: pointer;
+    transition:
+      color 180ms ease,
+      padding 180ms ease;
+  }
+
+  .cb-process__step:hover {
+    color: var(--color-text);
+    padding-left: 0.4rem;
+  }
+
+  .cb-process__step.is-active {
+    color: var(--color-text);
+    padding-left: 0.4rem;
+  }
+
+  .cb-process__step-number {
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .cb-process__step-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .cb-process__step-arrow {
+    color: var(--color-brand-coral);
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translate(-0.4rem, 0.4rem);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  .cb-process__step:hover .cb-process__step-arrow,
+  .cb-process__step.is-active .cb-process__step-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  .cb-process__detail {
+    position: relative;
+    min-height: 24rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .cb-process__detail::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    height: 5rem;
+    border-left: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    content: '';
+    opacity: 0.7;
+  }
+
+  .cb-process__detail-top,
+  .cb-process__detail-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .cb-process__detail-top {
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-process__detail-index {
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .cb-process__detail-label,
+  .cb-process__detail-footer {
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cb-process__detail-content {
+    max-width: 34rem;
+    padding: 4rem 0 3rem;
+  }
+
+  .cb-process__detail-kicker {
+    margin-bottom: 0.75rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cb-process__detail h3 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-process__detail-content > p:not(.cb-process__detail-kicker) {
+    max-width: 31rem;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .cb-process__detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .cb-process__detail-tags span {
+    padding: 0.45rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+  }
+
+  .cb-process__detail-footer {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    align-items: center;
+  }
+
+  .cb-process__statement {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .cb-process__statement-line {
+    width: 3rem;
+    height: 1px;
+    flex-shrink: 0;
+    background: var(--color-brand-coral);
+  }
+
+  .cb-process__statement p {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  .cb-process__statement strong {
+    color: var(--color-brand-coral);
+  }
+
+  @media (min-width: 700px) {
+    .cb-process__header {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
+      align-items: end;
+    }
+
+    .cb-process__layout {
+      grid-template-columns: minmax(14rem, 0.7fr) minmax(0, 1.3fr);
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .cb-process__detail {
+      min-height: 31rem;
+      padding: 2rem;
+    }
+
+    .cb-process__detail-content {
+      padding-top: 5rem;
+    }
+
+    .cb-process__detail-footer {
+      right: 2rem;
+      bottom: 2rem;
+      left: 2rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .cb-process {
+      padding: 10rem 0;
+    }
+
+    .cb-process__layout {
+      grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1.28fr);
+      gap: 4rem;
+    }
+
+    .cb-process__step {
+      min-height: 5rem;
+    }
+
+    .cb-process__detail {
+      min-height: 34rem;
+      padding: 2.5rem;
+    }
+
+    .cb-process__detail-footer {
+      right: 2.5rem;
+      bottom: 2.5rem;
+      left: 2.5rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .cb-process {
+      padding: 6rem 0;
+    }
+
+    .cb-process__detail {
+      min-height: 27rem;
+    }
+
+    .cb-process__detail-content {
+      padding-top: 3rem;
+    }
+
+    .cb-process__detail-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-process__step,
+    .cb-process__step-arrow {
+      transition: none;
+    }
+
+    .cb-process__step:hover,
+    .cb-process__step.is-active {
+      padding-left: 0;
+    }
+  }
+</style>
