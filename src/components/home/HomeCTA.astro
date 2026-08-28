@@ -1,0 +1,226 @@
+<section class="cb-home-cta" id="start">
+  <div class="cb-container">
+    <div class="cb-home-cta__panel">
+      <div class="cb-home-cta__content">
+        <p class="cb-eyebrow">/ START A PROJECT</p>
+
+        <h2>
+          Have a problem worth
+          <span>solving?</span>
+        </h2>
+
+        <p>
+          Tell us what you are building, what is not working or where your
+          business needs a better system. We will help you turn the idea into
+          a clear technical direction.
+        </p>
+
+        <a class="cb-home-cta__button" href="/contact/">
+          Let's talk about your project
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="cb-home-cta__meta">
+        <div>
+          <span>CTRLBUILD TECHNOLOGIES</span>
+          <strong>Software engineering · Digital solutions</strong>
+        </div>
+
+        <div class="cb-home-cta__mark" aria-hidden="true">
+          CB<span>↗</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cb-home-cta {
+    padding: 8rem 0;
+    background: var(--color-bg);
+  }
+
+  .cb-home-cta__panel {
+    position: relative;
+    min-height: 34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 3rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-home-cta__panel::before {
+    position: absolute;
+    right: -10rem;
+    bottom: -14rem;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-brand-coral) 14%, transparent),
+      transparent 68%
+    );
+    content: '';
+    pointer-events: none;
+  }
+
+  .cb-home-cta__content {
+    position: relative;
+    z-index: 1;
+    max-width: 48rem;
+  }
+
+  .cb-home-cta__content h2 {
+    max-width: 10ch;
+    margin-top: 1rem;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.07em;
+  }
+
+  .cb-home-cta__content h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-home-cta__content > p:not(.cb-eyebrow) {
+    max-width: 38rem;
+    margin-top: 2rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cb-home-cta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 0.9rem 1.15rem;
+    border: 1px solid var(--color-brand-coral);
+    background: var(--color-brand-coral);
+    color: var(--color-bg);
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition:
+      transform 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease;
+  }
+
+  .cb-home-cta__button:hover {
+    transform: translateY(-2px);
+    background: transparent;
+    color: var(--color-brand-coral);
+  }
+
+  .cb-home-cta__button span {
+    transition: transform 180ms ease;
+  }
+
+  .cb-home-cta__button:hover span {
+    transform: translate(3px, -3px);
+  }
+
+  .cb-home-cta__meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cb-home-cta__meta div:first-child {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .cb-home-cta__meta span {
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cb-home-cta__meta strong {
+    color: var(--color-text-muted);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .cb-home-cta__mark {
+    color: var(--color-brand-coral);
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .cb-home-cta__mark span {
+    margin-left: 0.25rem;
+    color: var(--color-brand-coral);
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1100px) {
+    .cb-home-cta {
+      padding: 10rem 0;
+    }
+
+    .cb-home-cta__panel {
+      min-height: 38rem;
+      padding: 4rem;
+    }
+
+    .cb-home-cta__meta {
+      margin-top: 6rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .cb-home-cta {
+      padding: 6rem 0;
+    }
+
+    .cb-home-cta__panel {
+      min-height: 34rem;
+      padding: 2rem;
+    }
+
+    .cb-home-cta__meta {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-top: 4rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .cb-home-cta__panel {
+      min-height: 36rem;
+      padding: 1.5rem;
+    }
+
+    .cb-home-cta__content > p:not(.cb-eyebrow) {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-home-cta__button,
+    .cb-home-cta__button span {
+      transition: none;
+    }
+
+    .cb-home-cta__button:hover {
+      transform: none;
+    }
+  }
+</style>
