@@ -1,0 +1,305 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Insights | CtrlBuild Technologies"
+  description="Ideas, perspectives and practical insights from CtrlBuild Technologies on software engineering, digital systems, AI and technology."
+>
+  <main class="cb-insights-page">
+    <section class="cb-insights-hero">
+      <div class="cb-container">
+        <p class="cb-eyebrow">/ INSIGHTS</p>
+
+        <h1>
+          Thinking about
+          <span>technology.</span>
+        </h1>
+
+        <p class="cb-insights-hero__intro">
+          Practical perspectives on software, digital systems, artificial
+          intelligence and the technology behind better ways of working.
+        </p>
+      </div>
+    </section>
+
+    <section class="cb-insights-content">
+      <div class="cb-container">
+        <div class="cb-insights-content__header">
+          <div>
+            <p class="cb-eyebrow">/ COMING SOON</p>
+
+            <h2>
+              Useful ideas are
+              <span>on the way.</span>
+            </h2>
+          </div>
+
+          <p>
+            We are preparing articles and practical guides covering the
+            technology decisions, engineering principles and digital
+            challenges that businesses encounter every day.
+          </p>
+        </div>
+
+        <div class="cb-insights-topics">
+          <article class="cb-insight-topic">
+            <span class="cb-insight-topic__number">01</span>
+
+            <div>
+              <p class="cb-eyebrow">ENGINEERING</p>
+              <h3>Building better software systems</h3>
+              <p>
+                Architecture, development practices, scalability and the
+                engineering decisions behind reliable digital products.
+              </p>
+            </div>
+          </article>
+
+          <article class="cb-insight-topic">
+            <span class="cb-insight-topic__number">02</span>
+
+            <div>
+              <p class="cb-eyebrow">DIGITAL SYSTEMS</p>
+              <h3>Technology for better operations</h3>
+              <p>
+                How organisations can replace fragmented processes with
+                connected systems, automation and useful information.
+              </p>
+            </div>
+          </article>
+
+          <article class="cb-insight-topic">
+            <span class="cb-insight-topic__number">03</span>
+
+            <div>
+              <p class="cb-eyebrow">AI & DATA</p>
+              <h3>Making intelligent technology practical</h3>
+              <p>
+                Practical applications of AI, data and automation that solve
+                real problems rather than simply adding technology for its own
+                sake.
+              </p>
+            </div>
+          </article>
+
+          <article class="cb-insight-topic">
+            <span class="cb-insight-topic__number">04</span>
+
+            <div>
+              <p class="cb-eyebrow">PRODUCT</p>
+              <h3>From idea to digital product</h3>
+              <p>
+                Lessons around product discovery, MVP development, technical
+                foundations and building products that can grow.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cb-insights-cta">
+      <div class="cb-container">
+        <div class="cb-insights-cta__panel">
+          <p class="cb-eyebrow">/ HAVE SOMETHING TO BUILD?</p>
+
+          <h2>
+            You don't have to
+            <span>wait.</span>
+          </h2>
+
+          <p>
+            Our insights are coming soon, but your project does not have to.
+            Tell us what you are trying to build or improve.
+          </p>
+
+          <a href="/contact/">
+            Start a conversation
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .cb-insights-hero {
+    padding: 9rem 0 7rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-insights-hero h1 {
+    max-width: 10ch;
+    margin-top: 1.25rem;
+    font-size: clamp(3.2rem, 8vw, 7rem);
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+  }
+
+  .cb-insights-hero h1 span,
+  .cb-insights-content__header h2 span,
+  .cb-insights-cta__panel h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-insights-hero__intro {
+    max-width: 42rem;
+    margin-top: 2rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .cb-insights-content {
+    padding: 7rem 0 2rem;
+  }
+
+  .cb-insights-content__header {
+    display: grid;
+    gap: 2rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-insights-content__header h2 {
+    max-width: 11ch;
+    margin-top: 1rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.97;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-insights-content__header > p {
+    max-width: 34rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .cb-insights-topics {
+    display: grid;
+  }
+
+  .cb-insight-topic {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cb-insight-topic__number {
+    padding-top: 0.2rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .cb-insight-topic h3 {
+    max-width: 20ch;
+    margin-top: 0.75rem;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .cb-insight-topic p:not(.cb-eyebrow) {
+    max-width: 36rem;
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .cb-insights-cta {
+    padding: 7rem 0 8rem;
+  }
+
+  .cb-insights-cta__panel {
+    padding: 4rem 2rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-insights-cta__panel h2 {
+    max-width: 10ch;
+    margin-top: 1rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.97;
+    letter-spacing: -0.06em;
+  }
+
+  .cb-insights-cta__panel > p:not(.cb-eyebrow) {
+    max-width: 34rem;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .cb-insights-cta__panel a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .cb-insights-cta__panel a span {
+    transition: transform 180ms ease;
+  }
+
+  .cb-insights-cta__panel a:hover span {
+    transform: translate(3px, -3px);
+  }
+
+  @media (min-width: 700px) {
+    .cb-insights-hero {
+      padding: 11rem 0 8rem;
+    }
+
+    .cb-insights-content {
+      padding-top: 9rem;
+    }
+
+    .cb-insights-content__header {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: end;
+      gap: 5rem;
+      padding-bottom: 6rem;
+    }
+
+    .cb-insight-topic {
+      grid-template-columns: 5rem minmax(0, 1fr);
+      gap: 2rem;
+      padding: 5rem 0;
+    }
+
+    .cb-insights-cta__panel {
+      padding: 6rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cb-insights-hero {
+      padding: 7rem 0 5rem;
+    }
+
+    .cb-insights-content {
+      padding-top: 6rem;
+    }
+
+    .cb-insights-cta {
+      padding: 6rem 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-insights-cta__panel a span {
+      transition: none;
+    }
+  }
+</style>
