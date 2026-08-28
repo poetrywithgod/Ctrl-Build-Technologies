@@ -1,0 +1,233 @@
+<section class="cb-services" id="services">
+  <div class="cb-container">
+    <div class="cb-services__header">
+      <div>
+        <p class="cb-eyebrow">/ WHAT WE BUILD</p>
+        <h2>Technology built around <span>your business.</span></h2>
+      </div>
+      <p class="cb-services__intro">From business systems and digital products to AI-powered platforms, we engineer software around the way your organisation actually works.</p>
+    </div>
+
+    <div class="cb-services__grid">
+      <article class="cb-service-card cb-service-card--featured">
+        <span class="cb-service-card__number">01</span>
+        <div>
+          <h3>Web &amp; Application Development</h3>
+          <p>High-performance web applications, SaaS platforms, customer portals, dashboards and backend systems.</p>
+        </div>
+        <span class="cb-service-card__arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="cb-service-card">
+        <span class="cb-service-card__number">02</span>
+        <div>
+          <h3>Business &amp; Enterprise Systems</h3>
+          <p>POS, inventory, CRM, ERP, finance, HR and workflow systems designed around your operations.</p>
+        </div>
+        <span class="cb-service-card__arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="cb-service-card">
+        <span class="cb-service-card__number">03</span>
+        <div>
+          <h3>Mobile Applications</h3>
+          <p>Customer, staff and business applications for Android, iOS and cross-platform environments.</p>
+        </div>
+        <span class="cb-service-card__arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="cb-service-card">
+        <span class="cb-service-card__number">04</span>
+        <div>
+          <h3>AI &amp; Intelligent Systems</h3>
+          <p>AI automation, intelligent workflows, document intelligence, recommendation systems and more.</p>
+        </div>
+        <span class="cb-service-card__arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="cb-service-card">
+        <span class="cb-service-card__number">05</span>
+        <div>
+          <h3>Data &amp; Analytics</h3>
+          <p>Business intelligence, real-time dashboards, predictive analytics and data visualisation.</p>
+        </div>
+        <span class="cb-service-card__arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="cb-service-card">
+        <span class="cb-service-card__number">06</span>
+        <div>
+          <h3>Custom Software &amp; Transformation</h3>
+          <p>Turn manual processes, legacy systems and complex business requirements into modern software.</p>
+        </div>
+        <span class="cb-service-card__arrow" aria-hidden="true">↗</span>
+      </article>
+    </div>
+
+    <div class="cb-services__statement">
+      <span class="cb-services__line"></span>
+      <p>If your business has a process, <strong>we can turn it into software.</strong></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cb-services {
+    position: relative;
+    padding: 7rem 0;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-services__header {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .cb-services__header h2 {
+    max-width: 12ch;
+    margin-top: 1rem;
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .cb-services__header h2 span {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-services__intro {
+    max-width: 34rem;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .cb-services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .cb-service-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.25rem;
+    min-height: 15rem;
+    padding: 1.5rem;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+    transition: background-color 180ms ease, transform 180ms ease;
+  }
+
+  .cb-service-card:hover {
+    z-index: 1;
+    background: var(--color-surface);
+    transform: translateY(-3px);
+  }
+
+  .cb-service-card--featured {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-brand-burgundy) 8%, var(--color-bg)), var(--color-bg));
+  }
+
+  .cb-service-card__number {
+    color: var(--color-brand-coral);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .cb-service-card h3 {
+    max-width: 18rem;
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    line-height: 1.1;
+  }
+
+  .cb-service-card p {
+    max-width: 27rem;
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .cb-service-card__arrow {
+    align-self: start;
+    color: var(--color-brand-coral);
+    font-size: 1.2rem;
+    transition: transform 180ms ease;
+  }
+
+  .cb-service-card:hover .cb-service-card__arrow {
+    transform: translate(3px, -3px);
+  }
+
+  .cb-services__statement {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .cb-services__line {
+    width: 3rem;
+    height: 1px;
+    background: var(--color-brand-coral);
+  }
+
+  .cb-services__statement p {
+    color: var(--color-text-muted);
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  .cb-services__statement strong {
+    color: var(--color-text);
+  }
+
+  @media (min-width: 700px) {
+    .cb-services__header {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
+      align-items: end;
+    }
+
+    .cb-services__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cb-service-card {
+      min-height: 17rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .cb-services {
+      padding: 9rem 0;
+    }
+
+    .cb-services__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cb-service-card {
+      min-height: 18rem;
+      padding: 2rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-service-card,
+    .cb-service-card__arrow {
+      transition: none;
+    }
+
+    .cb-service-card:hover {
+      transform: none;
+    }
+  }
+</style>
