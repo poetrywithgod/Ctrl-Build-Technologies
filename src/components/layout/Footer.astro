@@ -1,0 +1,272 @@
+<footer class="cb-footer">
+  <div class="cb-container">
+    <div class="cb-footer__top">
+      <div class="cb-footer__brand">
+        <a href="/" aria-label="CtrlBuild Technologies home">
+          <img
+            src="/ctrlbuild-logo.png"
+            alt="CtrlBuild Technologies"
+          />
+        </a>
+
+        <p>
+          Software engineering and digital solutions for businesses that need
+          better systems.
+        </p>
+      </div>
+
+      <div class="cb-footer__columns">
+        <div class="cb-footer__column">
+          <span class="cb-footer__label">EXPLORE</span>
+
+          <a href="/services/">Services</a>
+          <a href="/solutions/">Solutions</a>
+          <a href="/work/">Work</a>
+          <a href="/insights/">Insights</a>
+        </div>
+
+        <div class="cb-footer__column">
+          <span class="cb-footer__label">COMPANY</span>
+
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </div>
+
+        <div class="cb-footer__column">
+          <span class="cb-footer__label">START A PROJECT</span>
+
+          <a class="cb-footer__project-link" href="/contact/">
+            Let's talk
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-footer__bottom">
+      <span>© {new Date().getFullYear()} CtrlBuild Technologies</span>
+
+      <span>Software engineering · Digital solutions</span>
+
+      <a href="#top" data-back-to-top>
+        Back to top
+        <span aria-hidden="true">↑</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const backToTop = document.querySelector<HTMLAnchorElement>(
+    '[data-back-to-top]'
+  );
+
+  backToTop?.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+</script>
+
+<style>
+  .cb-footer {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 1.5rem;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-footer::before {
+    position: absolute;
+    right: -12rem;
+    bottom: -18rem;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-brand-coral) 7%, transparent),
+      transparent 68%
+    );
+    content: '';
+    pointer-events: none;
+  }
+
+  .cb-footer__top {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 4rem;
+    padding-bottom: 5rem;
+  }
+
+  .cb-footer__brand {
+    max-width: 22rem;
+  }
+
+  .cb-footer__brand a {
+    display: inline-flex;
+  }
+
+  .cb-footer__brand img {
+    display: block;
+    width: 10rem;
+    height: auto;
+    max-height: 3rem;
+    object-fit: contain;
+  }
+
+  .cb-footer__brand p {
+    max-width: 20rem;
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .cb-footer__columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .cb-footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .cb-footer__label {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cb-footer__column > a:not(.cb-footer__project-link) {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    transition: color 180ms ease;
+  }
+
+  .cb-footer__column > a:not(.cb-footer__project-link):hover {
+    color: var(--color-text);
+  }
+
+  .cb-footer__project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-brand-coral);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .cb-footer__project-link span {
+    transition: transform 180ms ease;
+  }
+
+  .cb-footer__project-link:hover span {
+    transform: translate(3px, -3px);
+  }
+
+  .cb-footer__bottom {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+  }
+
+  .cb-footer__bottom a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-text-muted);
+    transition: color 180ms ease;
+  }
+
+  .cb-footer__bottom a:hover {
+    color: var(--color-brand-coral);
+  }
+
+  @media (min-width: 800px) {
+    .cb-footer {
+      padding-top: 7rem;
+    }
+
+    .cb-footer__top {
+      grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
+      gap: 5rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .cb-footer {
+      padding-top: 8rem;
+    }
+
+    .cb-footer__top {
+      padding-bottom: 7rem;
+    }
+
+    .cb-footer__columns {
+      gap: 4rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cb-footer {
+      padding-top: 4rem;
+    }
+
+    .cb-footer__top {
+      gap: 3rem;
+      padding-bottom: 4rem;
+    }
+
+    .cb-footer__columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cb-footer__column:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .cb-footer__bottom {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .cb-footer__columns {
+      grid-template-columns: 1fr;
+    }
+
+    .cb-footer__column:last-child {
+      grid-column: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-footer__project-link span,
+    .cb-footer__bottom a {
+      transition: none;
+    }
+  }
+</style>
