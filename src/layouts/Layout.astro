@@ -41,6 +41,42 @@ const {
 
     <script is:inline>
       (() => {
+        const revealElements = document.querySelectorAll('[data-reveal]');
+
+        if (!revealElements.length) return;
+
+        const reveal = (element) => {
+          element.classList.add('is-revealed');
+        };
+
+        if (
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ) {
+          revealElements.forEach(reveal);
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              reveal(entry.target);
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px',
+          }
+        );
+
+        revealElements.forEach((element) => observer.observe(element));
+      })();
+    </script>
+
+    <script is:inline>
+      (() => {
         const storageKey = 'ctrlbuild-theme';
         const savedTheme = localStorage.getItem(storageKey);
 
