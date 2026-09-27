@@ -2,18 +2,18 @@
   <div class="cb-container">
     <div class="cb-work__header">
       <div>
-        <p class="cb-eyebrow">/ SELECTED WORK</p>
+        <p class="cb-eyebrow">/ WHAT WE BUILD</p>
         <h2>Software built for <span>real-world problems.</span></h2>
       </div>
 
       <div class="cb-work__header-side">
         <p>
-          A selection of systems, platforms and digital products engineered
-          around specific business and operational needs.
+          The kinds of systems, platforms and digital products we build.
+          Full case studies from real projects are on their way.
         </p>
 
         <a href="/work/">
-          View all work
+          See what's coming
           <span aria-hidden="true">↗</span>
         </a>
       </div>
@@ -68,7 +68,10 @@
 
         <div class="cb-work-card__content">
           <div>
-            <p class="cb-work-card__type">Education · SaaS · Operations</p>
+            <p class="cb-work-card__type">
+              Education · SaaS · Operations
+              <span class="cb-work-card__badge">Case study coming soon</span>
+            </p>
             <h3>Connected school management infrastructure.</h3>
             <p>
               A multi-tenant education platform bringing academic operations,
@@ -108,7 +111,10 @@
 
         <div class="cb-work-card__content">
           <div>
-            <p class="cb-work-card__type">Business · Operations · Workflow</p>
+            <p class="cb-work-card__type">
+              Business · Operations · Workflow
+              <span class="cb-work-card__badge">Case study coming soon</span>
+            </p>
             <h3>Business processes turned into software.</h3>
             <p>
               Custom operational systems that connect people, data and
@@ -130,7 +136,7 @@
         <div class="cb-work-card__visual cb-work-card__visual--analytics">
           <div class="cb-work-card__analytics-head">
             <span>BUSINESS INTELLIGENCE</span>
-            <strong>+24.8%</strong>
+            <strong>↗ TRENDING</strong>
           </div>
 
           <div class="cb-work-card__analytics-chart">
@@ -155,7 +161,10 @@
 
         <div class="cb-work-card__content">
           <div>
-            <p class="cb-work-card__type">Analytics · Reporting · Intelligence</p>
+            <p class="cb-work-card__type">
+              Analytics · Reporting · Intelligence
+              <span class="cb-work-card__badge">Case study coming soon</span>
+            </p>
             <h3>Data made useful for better operations.</h3>
             <p>
               Dashboards and reporting systems that transform operational data
@@ -456,6 +465,10 @@
   }
 
   .cb-work-card__type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
     margin-bottom: 0.8rem;
     color: var(--color-brand-coral);
     font-family: var(--font-mono);
@@ -463,6 +476,16 @@
     font-weight: 600;
     letter-spacing: 0.07em;
     text-transform: uppercase;
+  }
+
+  .cb-work-card__badge {
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text-subtle);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
   }
 
   .cb-work-card h3 {
