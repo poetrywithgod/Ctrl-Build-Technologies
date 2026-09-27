@@ -99,10 +99,12 @@ const navigation = [
       menuToggle.setAttribute('aria-label', 'Open navigation menu');
       mobileMenu.classList.remove('is-open');
       document.body.classList.remove('cb-menu-open');
+      document.documentElement.classList.remove('cb-menu-open');
     };
 
     menuToggle.addEventListener('click', () => {
-      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      const isOpen =
+        menuToggle.getAttribute('aria-expanded') === 'true';
 
       if (isOpen) {
         closeMenu();
@@ -111,6 +113,7 @@ const navigation = [
         menuToggle.setAttribute('aria-label', 'Close navigation menu');
         mobileMenu.classList.add('is-open');
         document.body.classList.add('cb-menu-open');
+        document.documentElement.classList.add('cb-menu-open');
       }
     });
 
