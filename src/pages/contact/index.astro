@@ -74,6 +74,30 @@ import Layout from '../../layouts/Layout.astro';
                 </div>
               </div>
             </div>
+
+            <div class="cb-contact-direct">
+              <span class="cb-contact-direct__label">REACH US DIRECTLY</span>
+
+              <a href="mailto:ctrlbuild.tech@gmail.com">
+                <span>Email</span>
+                <strong>ctrlbuild.tech@gmail.com</strong>
+              </a>
+
+              <a href="https://wa.me/2349168498940" target="_blank" rel="noopener noreferrer">
+                <span>WhatsApp</span>
+                <strong>+234 916 849 8940</strong>
+              </a>
+
+              <a href="https://www.instagram.com/ctrlbuild.tech?stkn=MXF0ems2ZmNjczRldA==" target="_blank" rel="noopener noreferrer">
+                <span>Instagram</span>
+                <strong>@ctrlbuild.tech</strong>
+              </a>
+
+              <a href="https://www.tiktok.com/@ctrlkommanda" target="_blank" rel="noopener noreferrer">
+                <span>TikTok</span>
+                <strong>@ctrlkommanda</strong>
+              </a>
+            </div>
           </div>
 
           <div class="cb-contact-form-wrap">
@@ -197,7 +221,7 @@ import Layout from '../../layouts/Layout.astro';
 
     status.hidden = false;
     status.textContent =
-      'Your enquiry form is ready. Submission handling will be connected in the next stage.';
+      "This form isn't wired up to send yet — please reach out via WhatsApp or email above and we'll get back to you.";
   });
 </script>
 
@@ -288,6 +312,62 @@ import Layout from '../../layouts/Layout.astro';
     color: var(--color-text-muted);
     font-size: 0.82rem;
     line-height: 1.7;
+  }
+
+  .cb-contact-direct {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 2.5rem;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  .cb-contact-direct__label {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .cb-contact-direct a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text);
+    transition: color 180ms ease;
+  }
+
+  .cb-contact-direct a:hover {
+    color: var(--color-brand-coral);
+  }
+
+  .cb-contact-direct a > span {
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+  }
+
+  .cb-contact-direct a > strong {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: right;
+  }
+
+  @media (max-width: 480px) {
+    .cb-contact-direct a {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+
+    .cb-contact-direct a > strong {
+      text-align: left;
+    }
   }
 
   .cb-contact-form-wrap {
