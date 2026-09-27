@@ -101,7 +101,22 @@ import Layout from '../../layouts/Layout.astro';
           </div>
 
           <div class="cb-contact-form-wrap">
-            <form class="cb-contact-form" data-contact-form>
+            <form
+              class="cb-contact-form"
+              data-contact-form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New project enquiry — CtrlBuild website" />
+              <input
+                type="text"
+                name="_gotcha"
+                class="cb-form-honeypot"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+
               <div class="cb-form-field">
                 <label for="name">Name</label>
                 <input
@@ -165,14 +180,14 @@ import Layout from '../../layouts/Layout.astro';
                 ></textarea>
               </div>
 
-              <button type="submit">
-                Send enquiry
+              <button type="submit" data-submit-button>
+                <span data-button-label>Send enquiry</span>
                 <span aria-hidden="true">↗</span>
               </button>
 
               <p class="cb-contact-form__note">
-                This form is currently a project enquiry interface. Submission
-                handling will be connected to the CtrlBuild contact workflow.
+                Prefer not to use the form? Reach us directly via WhatsApp or
+                email above — same inbox, same response time.
               </p>
 
               <p
@@ -213,15 +228,56 @@ import Layout from '../../layouts/Layout.astro';
 <script>
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   const status = document.querySelector<HTMLElement>('[data-form-status]');
+  const submitButton = document.querySelector<HTMLButtonElement>('[data-submit-button]');
+  const buttonLabel = document.querySelector<HTMLElement>('[data-button-label]');
 
-  form?.addEventListener('submit', (event) => {
+  form?.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    if (!status) return;
+    if (!status || !submitButton || !buttonLabel) return;
 
-    status.hidden = false;
-    status.textContent =
-      "This form isn't wired up to send yet — please reach out via WhatsApp or email above and we'll get back to you.";
+    // Honeypot: if this hidden field got filled in, it's a bot — pretend
+    // to succeed and stop, don't actually submit.
+    const honeypot = form.querySelector<HTMLInputElement>('[name="_gotcha"]');
+    if (honeypot?.value) {
+      status.hidden = false;
+      status.className = 'cb-contact-form__status cb-contact-form__status--ok';
+      status.textContent = "Thanks — we'll be in touch shortly.";
+      form.reset();
+      return;
+    }
+
+    submitButton.disabled = true;
+    buttonLabel.textContent = 'Sending…';
+    status.hidden = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      status.hidden = false;
+
+      if (response.ok) {
+        status.className = 'cb-contact-form__status cb-contact-form__status--ok';
+        status.textContent = "Thanks — we've got your enquiry and will be in touch shortly.";
+        form.reset();
+      } else {
+        status.className = 'cb-contact-form__status cb-contact-form__status--error';
+        status.textContent =
+          "Something went wrong sending this. Please reach us directly via WhatsApp or email above instead.";
+      }
+    } catch {
+      status.hidden = false;
+      status.className = 'cb-contact-form__status cb-contact-form__status--error';
+      status.textContent =
+        "Something went wrong sending this. Please reach us directly via WhatsApp or email above instead.";
+    } finally {
+      submitButton.disabled = false;
+      buttonLabel.textContent = 'Send enquiry';
+    }
   });
 </script>
 
@@ -456,6 +512,25 @@ import Layout from '../../layouts/Layout.astro';
     color: var(--color-brand-coral);
   }
 
+  .cb-contact-form button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .cb-contact-form button:disabled:hover {
+    background: var(--color-brand-coral);
+    color: #fff;
+  }
+
+  .cb-form-honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .cb-contact-form__note {
     max-width: 30rem;
     margin-top: 1rem;
@@ -471,6 +546,16 @@ import Layout from '../../layouts/Layout.astro';
     color: var(--color-text-muted);
     font-size: 0.75rem;
     line-height: 1.6;
+  }
+
+  .cb-contact-form__status--ok {
+    border-color: var(--color-brand-coral);
+    color: var(--color-text);
+  }
+
+  .cb-contact-form__status--error {
+    border-color: #c0392b;
+    color: #c0392b;
   }
 
   .cb-contact-bottom {
